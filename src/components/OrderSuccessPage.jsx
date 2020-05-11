@@ -35,6 +35,9 @@ class OrderSuccessPage extends Component {
                     <div className={classes.ContinueShopping}>
                         <Button onClick={this.goToBookStore} className={classes.ContinueShoppingButton} variant="contained" color="primary">Continue Shopping</Button>
                     </div>
+                    <footer className={classes.Footer}>
+                        <p>Copyright © 2020, Bookstore Private Limited. All Rights Reserved</p>
+                    </footer>
                 </div>
             </div>
         )

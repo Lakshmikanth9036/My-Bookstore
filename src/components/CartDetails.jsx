@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import classes from '../scss_styles/CartDetails.module.scss';
-import { Card, IconButton, Button, FormControlLabel, RadioGroup } from '@material-ui/core';
+import { Card, IconButton, Button, 
+    FormControlLabel, RadioGroup 
+} from '@material-ui/core';
 import book from '../assets/images/Image1.png';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
@@ -85,6 +87,7 @@ class CartDetails extends Component {
                         <Button className={classes.PlaceOrderButton} onClick={this.placeOrderHandler} variant="contained" color="primary">Place order</Button>
                     </div>
                 </Card>
+                
                 <Card className={classes.CustomerDetails} variant="outlined">
                     <div className={classes.DetailsHeader}>
                         <div className={classes.Text}>Customer Details</div>

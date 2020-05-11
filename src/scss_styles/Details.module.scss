@@ -1,0 +1,76 @@
+.DetailsContainer {
+    display: flex;
+    margin-top: 120px;
+    width: 100%;
+
+    .DetailsCard {
+        display: flex;
+        margin-left: 25px;
+        width: 80%;
+        .BookImage {
+            width: 231px;
+            height: 346px;
+        }
+        .BookDetailsCard{
+            display: flex;
+            flex-direction: column;
+            margin-left: 28px;
+            width: 80%;
+            .BookDetails{
+                display: flex;
+                width: 80%;
+                flex-direction: column;
+                .BookName{
+                    font-size: 28px;
+                    font-weight: 500;
+                    text-align: left;
+                }
+                .AuthorName{
+                    margin-top: 6px;
+                    font-size: 18px;
+                    text-align: left;
+                    margin-bottom: 15px;
+                }
+                .BookPrice{
+                    display: flex;
+                    flex-direction: column;
+                    width: 116px;
+                    height: 50px;
+                    border: 1px solid #a03037;
+                    border-radius: 5px;
+                    margin-top: 15px;
+                    .Paperback{
+                        padding-left: 7px;
+                        padding-top: 5px;
+                        font-size: 15px;
+                        text-align: left;
+                        font-weight: bold;
+                    }
+                    .Price{
+                        padding-left: 7px;
+                        font-size: 15px;
+                        text-align: left;
+                        font-weight: bold;
+                        color: #a03037;
+                    }
+                }
+                .Description{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 12px;
+                    .Title{
+                        font-size: 20px;
+                        font-weight: 500;
+                        text-align: left;
+                    }
+                    .Text{
+                    margin-top: 12px;
+                    font-size: 18px;
+                    text-align: left;
+                    color: #333333;
+                    }
+                }
+            }
+        }
+    }
+}

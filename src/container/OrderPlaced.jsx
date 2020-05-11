@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
 import OrderSuccessPage from '../components/OrderSuccessPage';
 
 class OrderPlaced extends Component {
     render() {
         return (
-            <div>
+            <Fragment>
                 <NavBar />
                 <OrderSuccessPage {...this.props}/>
-                <Footer />
-            </div>
+            </Fragment>
         )
     }
 }

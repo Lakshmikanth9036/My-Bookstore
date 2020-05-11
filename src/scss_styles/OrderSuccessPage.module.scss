@@ -3,7 +3,19 @@
         margin: auto;
         width: 23%;
     }
+    Footer{
+        p{
+            margin-left: 174px;
+        } 
+    }
 }
+
+@media(max-width: 800px){
+    .Footer{
+        justify-content: center;
+    }
+}
+
 
 .OrderSuccessPage{
     display: flex;
@@ -58,12 +70,22 @@
       }
 
       .ContinueShopping {
-        margin-bottom: 100px;
+        margin-bottom: 26px;
 
         .ContinueShoppingButton {
             background-color: #3371b5;
             padding-left: 26px ;
             padding-right: 26px ;
         }
+    }
+    .Footer{
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        text-align: left;
+        height: 50px;
+        width: 100%;
+        background-color: #2E1D1E;
+        color: #FFFFFF;
     }
 }

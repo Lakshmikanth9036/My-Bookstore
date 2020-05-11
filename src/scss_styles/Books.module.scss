@@ -11,8 +11,9 @@
         position: relative;
         top: 83px;
         left: 18%;
+        margin-bottom: 80px;
     }
-    .Pagination{
+    .Pagination {
         margin-left: -9%;
     }
 }
@@ -21,8 +22,8 @@
     display: flex;
     flex-direction: column;
     width: 80%;
+    height: 80%;
     flex-wrap: wrap;
-    margin-bottom: 90px;
 
     .BooksHeader {
         display: flex;
@@ -71,21 +72,21 @@
 
         .SelectWrapper {
             position: relative;
-            margin-right: 7%;
+            margin-right: 8%;
         }
 
         // .SelectWrapper::after {
-            // transform: rotate(45deg);
-            // -webkit-transform: rotate(45deg);
-            // content: "\f107";
-            // font-family: "Font Awesome";
-            // font-size: 28px;
-            // position: absolute;
-            // top: 12px;
-            // right: 20px;
-            // color: #434b67;
-            // pointer-events: none;
-       // }
+        // transform: rotate(45deg);
+        // -webkit-transform: rotate(45deg);
+        // content: "\f107";
+        // font-family: "Font Awesome";
+        // font-size: 28px;
+        // position: absolute;
+        // top: 12px;
+        // right: 20px;
+        // color: #434b67;
+        // pointer-events: none;
+        // }
     }
 
     .Books {
@@ -103,6 +104,15 @@
 
             &:hover {
                 box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.2);
+            }
+
+            .Description {
+                display: flex;
+                border: 1px solid #9d9d9d;
+                color: #9d9d9d;
+                font-size: 11px;
+                width: 456px;
+                height: 318px;
             }
 
             .BookImageCont {
@@ -207,7 +217,7 @@
         }
     }
 
-    .Pagination{
+    .Pagination {
         display: flex;
         width: 100%;
         justify-content: center;

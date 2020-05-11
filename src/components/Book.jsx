@@ -1,17 +1,71 @@
 import React, { Component } from 'react';
 import classes from '../scss_styles/Books.module.scss';
-import { Card, Button } from '@material-ui/core';
-// import img from '';
+import { Card, Button, 
+    // Popover
+} from '@material-ui/core';
+import { withRouter } from 'react-router-dom';
 
 class Book extends Component {
 
+    state = {
+        anchorEl: null
+    }
+
+    handleBookDescriptionOpen = event => {
+        this.setState({ anchorEl: event.currentTarget })
+    }
+
+    handleBookDescriptionClose = () => {
+        this.setState({ anchorEl: null })
+    }
+
+    handleBookDetails = (book) => {
+        console.log(book)
+        const params = { book : book}
+        this.props.history.push('/bookstore/bookdetails',params)
+    }
+
     render() {
+        // const { open } = this.state
+        // const open = Boolean(this.state.anchorEl);
         const { book } = this.props
         return (
-            <Card className={classes.Book} variant="outlined">
-                <div className={classes.BookImageCont}>
-                    <img className={classes.BookImage} src={require(`../assets/images/${book.bookImage}`)} alt="book" />
+            <Card
+                className={classes.Book}
+                // variant="outlined"
+                // aria-owns={open ? 'mouse-over-popover' : undefined}
+                // buttonRef={node => { this.anchorEl = node }}
+                // aria-haspopup="true"
+                // onMouseEnter={this.handleBookDescriptionOpen}
+                // onMouseLeave={this.handleBookDescriptionClose}
+                >
 
+                {/* <Popover
+                    id="mouse-over-popover"
+                    open={open}
+                    anchorEl={this.anchorEl}
+                    anchorOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right',
+                    }}
+                    transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'left',
+                    }}
+                    onClose={this.handleBookDescriptionClose}
+                    disableRestoreFocus
+                >
+                    <div style={{
+                         border: "1px solid #9d9d9d",
+                         color: "#9d9d9d",
+                         fontSize: "11px",
+                         width: "456px",
+                         height: "318px",
+                    }}>{book.description}</div>
+                </Popover> */}
+
+                <div className={classes.BookImageCont}>
+                    <img className={classes.BookImage} onClick={() => this.handleBookDetails(book)} src={require(`../assets/images/${book.bookImage}`)} alt="book" />
                 </div>
                 <div className={classes.BookDetails}>
                     <div className={classes.BookName}>{book.bookName}</div>
@@ -20,17 +74,17 @@ class Book extends Component {
                 </div>
 
                 {
-                    book.noOfBooks === 0 ? <div className={classes.WishlistOnly} style={book.noOfBooks === 0 || book.noOfBooks < 5 ? {marginBottom:"-26px"} : null}>
+                    book.noOfBooks === 0 ? <div className={classes.WishlistOnly} style={book.noOfBooks === 0 || book.noOfBooks < 5 ? { marginBottom: "-26px" } : null}>
                         <Button className={classes.WishlistOnlyButton} variant="outlined">Wishlist</Button>
                     </div> :
-                    book.isCart ? <div className={classes.GoToBag} style={book.noOfBooks === 0 || book.noOfBooks < 5 ? {marginBottom:"-26px"} : null}>
-                        <Button className={classes.GoToBagButton} variant="contained" color="primary">Added to bag</Button>
-                    </div>
-                        :
-                        <div className={classes.CartWishlist} style={book.noOfBooks === 0 || book.noOfBooks < 5 ? {marginBottom:"-26px"} : null}>
-                            <Button className={classes.BagButton} variant="contained" color="primary">Add to bag</Button>
-                            <Button className={classes.WishlistButton} variant="outlined">Wishlist</Button>
+                        book.isCart ? <div className={classes.GoToBag} style={book.noOfBooks === 0 || book.noOfBooks < 5 ? { marginBottom: "-26px" } : null}>
+                            <Button className={classes.GoToBagButton} variant="contained" color="primary">Added to bag</Button>
                         </div>
+                            :
+                            <div className={classes.CartWishlist} style={book.noOfBooks === 0 || book.noOfBooks < 5 ? { marginBottom: "-26px" } : null}>
+                                <Button className={classes.BagButton} variant="contained" color="primary">Add to bag</Button>
+                                <Button className={classes.WishlistButton} variant="outlined">Wishlist</Button>
+                            </div>
                 }
 
                 {
@@ -42,4 +96,4 @@ class Book extends Component {
     }
 }
 
-export default Book
+export default withRouter(Book)

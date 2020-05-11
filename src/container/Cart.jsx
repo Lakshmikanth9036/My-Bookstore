@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import NavBar from '../components/NavBar';
 import CartDetails from '../components/CartDetails';
 import Footer from '../components/Footer';
@@ -6,11 +6,11 @@ import Footer from '../components/Footer';
 class Cart extends Component {
     render() {
         return (
-            <div>
+            <Fragment>
                 <NavBar />
                      <CartDetails {...this.props}/>
                 <Footer />
-            </div>
+            </Fragment>
         )
     }
 }

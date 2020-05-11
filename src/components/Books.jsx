@@ -13,7 +13,8 @@ class Books extends Component {
                 authorName: "by Steve Krug",
                 bookPrice: 1400,
                 isCart: false,
-                noOfBooks: 10
+                noOfBooks: 10,
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
             },
             {
                 bookImage: 'Image2.png',
@@ -21,7 +22,8 @@ class Books extends Component {
                 authorName: "by Paulo Coelho",
                 bookPrice: 1500,
                 isCart: false,
-                noOfBooks: 0
+                noOfBooks: 0,
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
             },
             {
                 bookImage: 'Image3.png',
@@ -29,7 +31,8 @@ class Books extends Component {
                 authorName: "by Kevin P.Nichols",
                 bookPrice: 1500,
                 isCart: true,
-                noOfBooks: 4
+                noOfBooks: 4,
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
             },
             {
                 bookImage: 'Image4.png',
@@ -37,7 +40,8 @@ class Books extends Component {
                 authorName: "by Carolyn Chandler",
                 bookPrice: 1500,
                 isCart: false,
-                noOfBooks: 10
+                noOfBooks: 10,
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
             },
             {
                 bookImage: 'Image5.png',
@@ -45,7 +49,8 @@ class Books extends Component {
                 authorName: "by Don Norman",
                 bookPrice: 1500,
                 isCart: true,
-                noOfBooks: 3
+                noOfBooks: 3,
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
             },
             {
                 bookImage: 'Image6.png',
@@ -53,7 +58,8 @@ class Books extends Component {
                 authorName: "by O`Relly",
                 bookPrice: 1500,
                 isCart: true,
-                noOfBooks: 10
+                noOfBooks: 10,
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
             },
             {
                 bookImage: 'Image7.png',
@@ -61,7 +67,8 @@ class Books extends Component {
                 authorName: "by Nanddeep Nachan",
                 bookPrice: 1500,
                 isCart: true,
-                noOfBooks: 10
+                noOfBooks: 10,
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
             },
             {
                 bookImage: 'Image8.png',
@@ -69,7 +76,8 @@ class Books extends Component {
                 authorName: "by Prof.Sharfen",
                 bookPrice: 1500,
                 isCart: true,
-                noOfBooks: 10
+                noOfBooks: 10,
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
             },
             {
                 bookImage: 'Image9.png',
@@ -77,7 +85,8 @@ class Books extends Component {
                 authorName: "by Afren Badesh",
                 bookPrice: 1500,
                 isCart: true,
-                noOfBooks: 10
+                noOfBooks: 10,
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
             }
         ]
     }
@@ -94,7 +103,7 @@ class Books extends Component {
                         <div className={classes.BookItemCount}>(128 Items)</div>
                     </div>
                     <div className={classes.SelectWrapper}>
-                        <select >
+                        <select>
                             <option defaultValue="none" hidden>Sort by relevance</option>
                             <option value="option-2">Price: Low to High</option>
                             <option value="option-3">Price: High to Low</option>
