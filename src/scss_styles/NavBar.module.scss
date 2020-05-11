@@ -1,0 +1,109 @@
+@media (min-width: 700px) {
+    .BookSearch {
+        width: 45%;
+    }
+    .Search {
+        width: 490px;
+    }
+    .Cart {
+        display: flex;
+    }
+    .Menu {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .BookSearch {
+        margin-left: 4%;
+        width: 80%;
+    }
+    .Cart {
+        display: none;
+    }
+    .Menu {
+        display: flex;
+    }
+}
+
+.NavBar {
+    display: flex;
+    background-color: #a03037;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    z-index: 90;
+    .BookSearch {
+        display: flex;
+        // width: 45%;
+        justify-content: space-between;
+        .BookLogoText {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .Logo {
+                width: 31px;
+                height: 24px;
+                cursor: pointer;
+            }
+
+            .BookStore {
+                text-align: left;
+                font-size: 18px;
+                letter-spacing: 0px;
+                color: #ffffff;
+                text-transform: capitalize;
+                padding: 5px 10px;
+            }
+        }
+
+        .Search {
+            display: flex;
+            height: 33px;
+            // width: 490px;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 3px;
+
+            .SearchIcon {
+                padding-left: 10px;
+                padding-right: 6px;
+                padding-top: 4px;
+                align-items: center;
+                justify-content: center;
+                color: #9d9d9d;
+            }
+
+            .Input {
+                display: flex;
+                color: inherit;
+                padding: 8px 8px 8px 0;
+                font-size: 13px;
+                align-items: center;
+                width: 100%;
+            }
+        }
+    }
+    .Cart {
+        align-items: center;
+
+        .CartName {
+            font-size: 15px;
+            letter-spacing: 0px;
+            color: #ffffff;
+            text-transform: capitalize;
+            padding: 5px 6px;
+        }
+
+        .CartLogo {
+            width: 20px;
+            height: 21px;
+        }
+    }
+}

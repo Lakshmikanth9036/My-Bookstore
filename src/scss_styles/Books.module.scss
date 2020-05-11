@@ -1,0 +1,215 @@
+@media (min-width: 700px) {
+    .BooksContainer {
+        position: relative;
+        top: 83px;
+        left: 171px;
+    }
+}
+
+@media (max-width: 700px) {
+    .BooksContainer {
+        position: relative;
+        top: 83px;
+        left: 18%;
+    }
+    .Pagination{
+        margin-left: -9%;
+    }
+}
+
+.BooksContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    flex-wrap: wrap;
+    margin-bottom: 90px;
+
+    .BooksHeader {
+        display: flex;
+        margin-bottom: 21px;
+        justify-content: space-between;
+
+        select {
+            background: #ffffff;
+            border: 1px solid #e2e2e2;
+            // border-radius: 4px;
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 8px;
+            padding-bottom: 7px;
+            // padding: 20px;
+            font-size: 12px;
+            color: #0a0102;
+
+            /* Here's the code we need */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        .BookCount {
+            display: flex;
+            align-items: center;
+            .BookText {
+                font-size: 25px;
+                font-weight: 500;
+            }
+            .BookItemCount {
+                color: #9d9d9d;
+                font-size: 12px;
+                margin-top: 7px;
+                margin-left: 5px;
+            }
+        }
+
+        .SelectWrapper {
+            position: relative;
+            margin-right: 7%;
+        }
+
+        // .SelectWrapper::after {
+            // transform: rotate(45deg);
+            // -webkit-transform: rotate(45deg);
+            // content: "\f107";
+            // font-family: "Font Awesome";
+            // font-size: 28px;
+            // position: absolute;
+            // top: 12px;
+            // right: 20px;
+            // color: #434b67;
+            // pointer-events: none;
+       // }
+    }
+
+    .Books {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .Book {
+            display: flex;
+            flex-direction: column;
+            width: 235px;
+            height: 315px;
+            margin-right: 32px;
+            margin-bottom: 26px;
+
+            &:hover {
+                box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.2);
+            }
+
+            .BookImageCont {
+                display: flex;
+                height: 171px;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                background-color: #f5f5f5;
+                .BookImage {
+                    height: 135px;
+                    width: 105px;
+                }
+            }
+
+            .BookDetails {
+                display: flex;
+                flex-direction: column;
+                margin-left: 25px;
+                margin-top: 18px;
+
+                .BookName {
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #0a0102;
+                }
+                .AuthorName {
+                    text-align: left;
+                    font-size: 10px;
+                    color: #9d9d9d;
+                    margin-top: 1px;
+                }
+                .BookPrice {
+                    text-align: left;
+                    font-size: 12px;
+                    color: #0a0102;
+                    margin-top: 10px;
+                    margin-bottom: 17px;
+                }
+            }
+
+            .WishlistOnly {
+                margin-left: 25px;
+                margin-right: 19px;
+                .WishlistOnlyButton {
+                    width: 191px;
+                    height: 29px;
+                    font-size: 11px;
+                    color: #0a0102;
+                }
+            }
+
+            .CartWishlist {
+                display: flex;
+                margin-left: 22px;
+                margin-right: 22px;
+                justify-content: space-between;
+
+                .BagButton {
+                    background-color: #a03037;
+                    width: 93px;
+                    height: 29px;
+                    font-size: 9px;
+                }
+                .WishlistButton {
+                    width: 83px;
+                    height: 29;
+                    font-size: 11px;
+                    color: #0a0102;
+                }
+            }
+
+            .GoToBag {
+                margin-left: 25px;
+                margin-right: 19px;
+                .GoToBagButton {
+                    background-color: #3371b5;
+                    width: 191px;
+                    height: 29px;
+                    font-size: 10px;
+                }
+            }
+            .Outofstock {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                top: -63%;
+                left: 11%;
+                // transform: translate(-50px,-50px);
+                width: 178px;
+                height: 37px;
+                background: #ffffff;
+                box-shadow: 0px 3px 6px #00000029;
+                border-radius: 2px;
+                opacity: 0.96;
+                font-size: 15px;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .Pagination{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+}

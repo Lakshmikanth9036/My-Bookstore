@@ -1,0 +1,257 @@
+@media (min-width: 700px) {
+    .CartDetails {
+        left: 16%;
+        width: 80%;
+    }
+    .CartItem {
+        width: 69%;
+    }
+    .CustomerDetails {
+        width: 69%;
+    }
+    .OrderSummery {
+        width: 69%;
+    }
+}
+
+@media (max-width: 700px) {
+    .CartDetails {
+        left: 5%;
+        right: 5%;
+        width: 90%;
+    }
+}
+
+.CartDetails {
+    display: flex;
+    position: relative;
+    top: 112px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 120px;
+
+    .CartItem {
+        display: flex;
+        flex-direction: column;
+
+        .No_of_cart_items {
+            text-align: left;
+            font-size: 18px;
+            font-weight: 500;
+            margin-left: 36px;
+            margin-top: 18px;
+            color: #0a0102;
+        }
+
+        .Item {
+            display: flex;
+            align-items: center;
+            margin-top: 25px;
+            margin-left: 36px;
+            flex-wrap: wrap;
+            .BookImage {
+                display: flex;
+                align-self: flex-start;
+                width: 65px;
+                height: 85px;
+            }
+
+            .BookDetails {
+                display: flex;
+                flex-direction: column;
+                margin-left: 30px;
+
+                .BookName {
+                    text-align: left;
+                    font-size: 14px;
+                    color: #0a0102;
+                }
+                .AuthorName {
+                    text-align: left;
+                    font-size: 12px;
+                    color: #9d9d9d;
+                    margin-top: 10px;
+                }
+                .BookPrice {
+                    text-align: left;
+                    font-size: 16px;
+                    color: #0a0102;
+                    margin-top: 10px;
+                }
+                .BookQuantity {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 26px;
+                    margin-left: -25px;
+
+                    .Minus{
+                        border: 1px solid #DBDBDB;
+                        margin-right: 3px;
+                    }
+
+                    .Pluse{
+                        border: 1px solid #DBDBDB;
+                        margin-left: 3px;
+                        margin-right: 5px;
+                    }
+
+                    .Quantity {
+                        display: flex;
+                        color: #333232;
+                        font-size: 14px;
+                        font-weight: 500;
+                        justify-content: center;
+                        align-items: center;
+                        width: 41px;
+                        height: 24px;
+                        border: 1px solid #dbdbdb;
+                        border-radius: 1px;
+                    }
+                }
+            }
+        }
+        .PlaceOrder {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-right: 28px;
+            margin-bottom: 10px;
+
+            .PlaceOrderButton {
+                background-color: #3371b5;
+            }
+        }
+    }
+
+    .CustomerDetails {
+        flex-direction: column;
+        // width: 60%;
+        margin-top: 20px;
+        .DetailsHeader {
+            display: flex;
+            margin-top: 21px;
+            margin-bottom: 21px;
+            margin-left: 36px;
+            justify-content: space-between;
+            align-items: center;
+            .Text {
+                font-size: 18px;
+                color: #333232;
+            }
+            .Edit{
+                font-size: 12px;
+                color: #333232;
+                margin-right: 28px;
+                cursor: pointer;
+            }
+        }
+        .Details {
+            display: flex;
+            margin-left: 36px;
+            flex-direction: column;
+
+            .Textfield {
+                width: 251px;
+                height: 45px;
+                margin-right: 10px;
+            }
+
+            .Row_1 {
+                display: flex;
+                margin-bottom: 20px;
+            }
+
+            .Row_2 {
+                display: flex;
+                margin-bottom: 20px;
+            }
+
+            .Row_3 {
+                display: flex;
+                margin-bottom: 10px;
+            }
+
+            .Row_4 {
+                display: flex;
+                margin-bottom: 20px;
+            }
+            .Type {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        .Continue {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-right: 30px;
+            margin-bottom: 28px;
+
+            .ContinueButton {
+                background-color: #3371b5;
+            }
+        }
+    }
+
+    .OrderSummery {
+        flex-direction: column;
+        // width: 60%;
+        margin-top: 20px;
+        .Summery {
+            text-align: left;
+            font-size: 18px;
+            margin-top: 21px;
+            margin-bottom: 21px;
+            margin-left: 36px;
+            color: #333232;
+        }
+        .OrderDetails {
+            flex-direction: column;
+            .OrderedItem {
+                display: flex;
+                align-items: center;
+                margin-top: 12px;
+                margin-left: 36px;
+                flex-wrap: wrap;
+                .OrderedBookImage {
+                    display: flex;
+                    align-self: flex-start;
+                    width: 65px;
+                    height: 85px;
+                }
+
+                .OrderedBookDetails {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 30px;
+
+                    .OrderedBookName {
+                        text-align: left;
+                        font-size: 14px;
+                        color: #0a0102;
+                    }
+                    .OrderedAuthorName {
+                        text-align: left;
+                        font-size: 12px;
+                        color: #9d9d9d;
+                        margin-top: 10px;
+                    }
+                    .OrderedBookPrice {
+                        text-align: left;
+                        font-size: 16px;
+                        color: #0a0102;
+                        margin-top: 10px;
+                    }
+                }
+            }
+            .Checkout {
+                display: flex;
+                flex-direction: row-reverse;
+                margin-right: 30px;
+                margin-bottom: 23px;
+
+                .CheckoutButton {
+                    background-color: #3371b5;
+                }
+            }
+        }
+    }
+}
