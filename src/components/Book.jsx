@@ -22,7 +22,7 @@ class Book extends Component {
     handleBookDetails = (book) => {
         console.log(book)
         const params = { book : book}
-        this.props.history.push('/bookstore/bookdetails',params)
+        this.props.history.push('/bookstore/user/bookdetails',params)
     }
 
     render() {

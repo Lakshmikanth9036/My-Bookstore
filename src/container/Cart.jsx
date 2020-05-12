@@ -8,7 +8,9 @@ class Cart extends Component {
         return (
             <Fragment>
                 <NavBar />
+                <Fragment>
                      <CartDetails {...this.props}/>
+                     </Fragment>
                 <Footer />
             </Fragment>
         )

@@ -43,7 +43,10 @@ class Login extends Component {
     }
 
     signInHandler = () => {
-        this.props.history.push('/bookstore')
+        if(this.state.type === 'User')
+            this.props.history.push('/bookstore/user')
+        else if(this.state.type === 'Admin')
+            this.props.history.push('/bookstore/admin')
     }
 
     isValidForm = (fields) => {

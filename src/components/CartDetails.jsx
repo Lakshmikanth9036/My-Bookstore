@@ -31,7 +31,7 @@ class CartDetails extends Component {
     }
 
     orderPlaced = () => {
-        this.props.history.push('/bookstore/oderplaced');
+        this.props.history.push('/bookstore/user/oderplaced');
     }
 
     handleRadioChange = event => {

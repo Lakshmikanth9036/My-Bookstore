@@ -28,11 +28,11 @@ class NavBar extends Component {
     }
 
     goToCart = () => {
-        this.props.history.push('/bookstore/cart');
+        this.props.history.push('/bookstore/user/cart');
     }
 
     goToBookStore = () => {
-        this.props.history.push('/bookstore');
+        this.props.history.push('/bookstore/user');
     }
 
     render() {

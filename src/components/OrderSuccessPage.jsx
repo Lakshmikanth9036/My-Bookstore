@@ -6,7 +6,7 @@ import { Button } from '@material-ui/core';
 class OrderSuccessPage extends Component {
 
     goToBookStore = () => {
-        this.props.history.push('/bookstore');
+        this.props.history.push('/bookstore/user');
     }
 
     render() {
