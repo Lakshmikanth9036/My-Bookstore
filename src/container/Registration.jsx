@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, InputAdornment, IconButton, Button } from '@material-ui/core';
+import { Card, InputAdornment, IconButton, Button, RadioGroup, FormControlLabel, Backdrop } from '@material-ui/core';
 import TextField from '../elements/CssTextField';
 import EmailIcon from '@material-ui/icons/Email';
 import Visibility from '@material-ui/icons/Visibility';
@@ -8,6 +8,8 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import ContactPhoneRoundedIcon from '@material-ui/icons/ContactPhoneRounded';
 import classes from '../scss_styles/Registration.module.scss'
+import StyledRadio from '../elements/StyledRadio';
+import Loader from '../UI/Loader';
 
 class Registration extends Component {
 
@@ -21,7 +23,9 @@ class Registration extends Component {
             password: false
         },
         showPassword: false,
-        isValid: false
+        isValid: false,
+        type: 'User',
+        loader: false
     }
 
     changeHandler = (e) => {
@@ -37,6 +41,14 @@ class Registration extends Component {
     handleClickShowPassword = () => {
         let showPassword = !this.state.showPassword
         this.setState({ showPassword })
+    }
+
+    signUpHandler = () => {
+
+        this.setState({loader: true})
+        setTimeout(() => {
+            this.props.history.push('/login')
+        },3000)
     }
 
     isValidForm = (fields) => {
@@ -209,10 +221,24 @@ class Registration extends Component {
                         />
                         <div className={classes.Buttons}>
                             <Button className={classes.SigninButton} href='/login'>Sign in</Button>
-                            <Button disabled={!this.state.isValid} className={classes.SignupButton} variant='contained'>Sign up</Button>
+                            <Button disabled={!this.state.isValid} className={classes.SignupButton} onClick={this.signUpHandler} variant='contained'>Sign up</Button>
                         </div>
+                        <RadioGroup style={{
+                            display: "flex",
+                            width: "80%",
+                            marginBottom: "20px",
+                            alignSelf: "center",
+                            justifyContent: "space-between"
+                        }} row aria-label="position" name="position" value={this.state.type} onChange={this.handleRadioChange}>
+                            <FormControlLabel value="User" control={<StyledRadio />} label={<div style={{ fontSize: "13px", fontWeight: "500", color: "#333232" }}>User</div>} />
+                            <FormControlLabel value="Seller" control={<StyledRadio />} label={<div style={{ fontSize: "13px", fontWeight: "500", color: "#333232" }}>Seller</div>} />
+                            <FormControlLabel value="Admin" control={<StyledRadio />} label={<div style={{ fontSize: "13px", fontWeight: "500", color: "#333232" }}>Admin</div>} />
+                        </RadioGroup>
                     </div>
                 </Card>
+                <Backdrop className={classes.ZIndex} open={this.state.loader}>
+                    <Loader />
+                </Backdrop>
             </div>
         )
     }

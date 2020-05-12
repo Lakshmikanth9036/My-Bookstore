@@ -15,7 +15,29 @@ class Books extends Component {
                 bookPrice: 1400,
                 isCart: false,
                 noOfBooks: 10,
-                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+                rating_review:[
+                    {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                }
+            ]
             },
             {
                 bookId:2,
@@ -25,7 +47,29 @@ class Books extends Component {
                 bookPrice: 1500,
                 isCart: false,
                 noOfBooks: 0,
-                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+                rating_review:[
+                    {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                }
+            ]
             },
             {
                 bookId:3,
@@ -35,7 +79,29 @@ class Books extends Component {
                 bookPrice: 1500,
                 isCart: true,
                 noOfBooks: 4,
-                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+                rating_review:[
+                    {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                }
+            ]
             },
             {
                 bookId:4,
@@ -45,7 +111,29 @@ class Books extends Component {
                 bookPrice: 1500,
                 isCart: false,
                 noOfBooks: 10,
-                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+                rating_review:[
+                    {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                }
+            ]
             },
             {
                 bookId:5,
@@ -55,7 +143,29 @@ class Books extends Component {
                 bookPrice: 1500,
                 isCart: true,
                 noOfBooks: 3,
-                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+                rating_review:[
+                    {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                }
+            ]
             },
             {
                 bookId:6,
@@ -65,7 +175,29 @@ class Books extends Component {
                 bookPrice: 1500,
                 isCart: true,
                 noOfBooks: 10,
-                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+                rating_review:[
+                    {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                }
+            ]
             },
             {
                 bookId:7,
@@ -75,7 +207,29 @@ class Books extends Component {
                 bookPrice: 1500,
                 isCart: true,
                 noOfBooks: 10,
-                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+                rating_review:[
+                    {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                }
+            ]
             },
             {
                 bookId:8,
@@ -85,7 +239,29 @@ class Books extends Component {
                 bookPrice: 1500,
                 isCart: true,
                 noOfBooks: 10,
-                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+                rating_review:[
+                    {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                }
+            ]
             },
             {
                 bookId:9,
@@ -95,7 +271,29 @@ class Books extends Component {
                 bookPrice: 1500,
                 isCart: true,
                 noOfBooks: 10,
-                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
+                description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+                rating_review:[
+                    {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                },
+                {
+                    rating: 4,
+                    review: 'Thank you so much M. Ahava for this diary!!!!! I write my everyday goals. 3 days from now I have matched 2 of them regarding my plan for success. I will continue and add my love life as well as my feelings. This is just a beginning! I will make it.',
+                }
+            ]
             }
         ]
     }

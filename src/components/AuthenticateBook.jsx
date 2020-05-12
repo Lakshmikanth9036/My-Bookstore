@@ -22,7 +22,8 @@ class AuthenticateBook extends Component {
                         <div className={classes.Description}>{book.description}</div>
                     </div>
                     <div className={classes.Authenticate_Div}>
-                        <Button className={classes.Authenticate_Button} onClick={this.placeOrderHandler} variant="contained" color="primary">Authenticate</Button>
+                        <Button className={classes.Authenticate_Button}  variant="contained" color="primary">Authenticate</Button>
+                        <Button className={classes.Disapprove_Button}  variant="contained" color="primary">Disapprove</Button>
                     </div>
                 </div>
             </Card>

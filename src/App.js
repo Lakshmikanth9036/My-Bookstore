@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Dashboard from './container/Dashboard';
 import Cart from './container/Cart';
 import OrderPlaced from './container/OrderPlaced';
@@ -22,6 +22,7 @@ class App extends Component {
           <Route exact path="/bookstore/user/bookdetails" component={BookDetails}/>
           <Route exact path="/register" component={Registration} />
           <Route exact path="/login" component={Login} />
+          <Redirect from="*" to="/login"/>
         </Switch>
       </div>
     );

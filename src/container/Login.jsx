@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import classes from '../scss_styles/Login.module.scss';
-import { Card, InputAdornment, IconButton, Link, Button, RadioGroup, FormControlLabel } from '@material-ui/core';
+import { Card, InputAdornment, IconButton, Link, Button, RadioGroup, FormControlLabel, Backdrop } from '@material-ui/core';
 import TextField from '../elements/CssTextField';
 import EmailIcon from '@material-ui/icons/Email';
 import Visibility from '@material-ui/icons/Visibility';
 import bookstorelogo from '../assets/images/bookstore.png';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import StyledRadio from '../elements/StyledRadio';
+import Loader from '../UI/Loader';
 
 class Login extends Component {
 
@@ -19,7 +20,8 @@ class Login extends Component {
         },
         showPassword: false,
         isValid: false,
-        type: 'User'
+        type: 'User',
+        loader: false
     }
 
     changeHandler = (e) => {
@@ -43,10 +45,14 @@ class Login extends Component {
     }
 
     signInHandler = () => {
-        if(this.state.type === 'User')
+
+        this.setState({loader: true})
+        setTimeout(() => {
+        if (this.state.type === 'User')
             this.props.history.push('/bookstore/user')
-        else if(this.state.type === 'Admin')
+        else if (this.state.type === 'Admin')
             this.props.history.push('/bookstore/admin')
+        },3000)
     }
 
     isValidForm = (fields) => {
@@ -71,7 +77,7 @@ class Login extends Component {
                 valid["emailAddress"] = false
             }
         }
-      
+
         if (!fields["password"]) {
             formIsValid = false;
             errors["password"] = "*Please enter your password.";
@@ -144,9 +150,9 @@ class Login extends Component {
                                             aria-label="toggle password visibility"
                                             onClick={this.handleClickShowPassword}
                                             edge="end">
-                                            {showPassword ? 
-                                            <Visibility style={{ color: "black" }} fontSize="small" />
-                                            : <VisibilityOff style={{color:"black"}} fontSize="small"/>  }
+                                            {showPassword ?
+                                                <Visibility style={{ color: "black" }} fontSize="small" />
+                                                : <VisibilityOff style={{ color: "black" }} fontSize="small" />}
                                         </IconButton>
                                     </InputAdornment>)
                             }}
@@ -157,18 +163,21 @@ class Login extends Component {
                             <Button disabled={!this.state.isValid} className={classes.SigninButton} onClick={this.signInHandler} variant='contained'>Sign in</Button>
                         </div>
                         <RadioGroup style={{
-                                display: "flex",
-                                width: "80%",
-                                marginBottom: "20px",
-                                alignSelf: "center",
-                                justifyContent: "space-between"
-                            }} row aria-label="position" name="position" value={this.state.type} onChange={this.handleRadioChange}>
-                                <FormControlLabel value="User" control={<StyledRadio />} label={<div style={{ fontSize: "13px", fontWeight: "500", color: "#333232" }}>User</div>} />
-                                <FormControlLabel value="Seller" control={<StyledRadio />} label={<div style={{ fontSize: "13px", fontWeight: "500", color: "#333232" }}>Seller</div>} />
-                                <FormControlLabel value="Admin" control={<StyledRadio />} label={<div style={{ fontSize: "13px", fontWeight: "500", color: "#333232" }}>Admin</div>} />
-                            </RadioGroup>
+                            display: "flex",
+                            width: "80%",
+                            marginBottom: "20px",
+                            alignSelf: "center",
+                            justifyContent: "space-between"
+                        }} row aria-label="position" name="position" value={this.state.type} onChange={this.handleRadioChange}>
+                            <FormControlLabel value="User" control={<StyledRadio />} label={<div style={{ fontSize: "13px", fontWeight: "500", color: "#333232" }}>User</div>} />
+                            <FormControlLabel value="Seller" control={<StyledRadio />} label={<div style={{ fontSize: "13px", fontWeight: "500", color: "#333232" }}>Seller</div>} />
+                            <FormControlLabel value="Admin" control={<StyledRadio />} label={<div style={{ fontSize: "13px", fontWeight: "500", color: "#333232" }}>Admin</div>} />
+                        </RadioGroup>
                     </div>
                 </Card>
+                <Backdrop className={classes.ZIndex} open={this.state.loader}>
+                    <Loader />
+                </Backdrop>
             </div>
         )
     }
