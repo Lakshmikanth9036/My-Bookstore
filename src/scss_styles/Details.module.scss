@@ -1,73 +1,187 @@
-.DetailsContainer {
-    display: flex;
+.OuterContainer {
     margin-top: 120px;
     width: 100%;
-
-    .DetailsCard {
+    .DetailsContainer {
         display: flex;
-        margin-left: 25px;
-        width: 80%;
-        .BookImage {
-            width: 231px;
-            height: 346px;
-        }
-        .BookDetailsCard{
+        width: 100%;
+        flex-wrap: wrap;
+
+        .DetailsCard {
             display: flex;
-            flex-direction: column;
-            margin-left: 28px;
-            width: 80%;
-            .BookDetails{
+            margin-left: 25px;
+            width: 100%;
+            flex-wrap: wrap;
+            .BookImage {
+                width: 231px;
+                height: 346px;
+            }
+            .BookDetailsCard {
                 display: flex;
-                width: 80%;
                 flex-direction: column;
-                .BookName{
-                    font-size: 28px;
-                    font-weight: 500;
-                    text-align: left;
-                }
-                .AuthorName{
-                    margin-top: 6px;
-                    font-size: 18px;
-                    text-align: left;
-                    margin-bottom: 15px;
-                }
-                .BookPrice{
+                margin-left: 28px;
+                width: 55%;
+                .BookDetails {
                     display: flex;
+                    width: 80%;
                     flex-direction: column;
-                    width: 116px;
-                    height: 50px;
-                    border: 1px solid #a03037;
-                    border-radius: 5px;
-                    margin-top: 15px;
-                    .Paperback{
-                        padding-left: 7px;
-                        padding-top: 5px;
-                        font-size: 15px;
-                        text-align: left;
-                        font-weight: bold;
-                    }
-                    .Price{
-                        padding-left: 7px;
-                        font-size: 15px;
-                        text-align: left;
-                        font-weight: bold;
-                        color: #a03037;
-                    }
-                }
-                .Description{
-                    display: flex;
-                    flex-direction: column;
-                    margin-top: 12px;
-                    .Title{
-                        font-size: 20px;
+                    .BookName {
+                        font-size: 28px;
                         font-weight: 500;
                         text-align: left;
                     }
-                    .Text{
-                    margin-top: 12px;
-                    font-size: 18px;
-                    text-align: left;
-                    color: #333333;
+                    .AuthorName {
+                        margin-top: 6px;
+                        font-size: 18px;
+                        text-align: left;
+                        margin-bottom: 15px;
+                    }
+                    .BookPrice {
+                        display: flex;
+                        flex-direction: column;
+                        width: 116px;
+                        height: 50px;
+                        border: 1px solid #a03037;
+                        border-radius: 5px;
+                        margin-top: 15px;
+                        .Paperback {
+                            padding-left: 7px;
+                            padding-top: 5px;
+                            font-size: 15px;
+                            text-align: left;
+                            font-weight: bold;
+                        }
+                        .Price {
+                            padding-left: 7px;
+                            font-size: 15px;
+                            text-align: left;
+                            font-weight: bold;
+                            color: #a03037;
+                        }
+                    }
+                    .Description {
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 12px;
+                        margin-bottom: 12px;
+                        .Title {
+                            font-size: 20px;
+                            font-weight: 500;
+                            text-align: left;
+                        }
+                        .Text {
+                            margin-top: 12px;
+                            font-size: 17px;
+                            text-align: left;
+                            color: #333333;
+                        }
+                    }
+                }
+            }
+            .BuyNow {
+                display: flex;
+                width: 300px;
+                height: 374px;
+                margin-right: 3%;
+                border: 2px solid #9d9d9d;
+                border-radius: 3px;
+                .BuyNowCont {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    margin-left: 7px;
+                    margin-top:12px;
+                    .Row_1 {
+                        display: flex;
+                        width: 100%;
+                        justify-content: space-between;
+                        .Row_1_Column_1 {
+                            display: flex;
+                            flex-direction: column;
+                            .Row_1_Column_1_Text {
+                                font-size: 13px;
+                                font-weight: bold;
+                                margin-bottom: 5px;
+                            }
+                            select {
+                                background: #ffffff;
+                                margin-left: 15px;
+                                border: 1px solid #e2e2e2;
+                                width: 100%;
+                                padding-left: 8px;
+                                padding-right: 8px;
+                                padding-top: 8px;
+                                padding-bottom: 7px;
+                                font-size: 12px;
+                                color: #0a0102;
+                            }
+                        }
+                        .Row_1_Column_2 {
+                            display: flex;
+                            flex-direction: column;
+                            margin-right: 12px;
+                            .Row_1_Column_2_Price {
+                                text-align: right;
+                                font-size: 18px;
+                                color: #B12704;
+                            }
+                            .Row_1_Column_2_List_Price{
+                                display: flex;
+                                justify-content: flex-end;
+                                color: #555;
+                                font-size: 13px;
+                                text-align: right;
+                            }
+                            .Row_1_Column_2_Save_Price{
+                                color: #555;
+                                font-size: 13px;
+                                text-align: right;
+                            }
+                        }
+                    }
+                    .Row_2{
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 20px;
+                        margin-left: 15px;
+                        .Row_2_1{
+                            color: #c45500;
+                            font-size: 16px;
+                            font-weight: 500;
+                            text-align: left;
+                        }
+                        .Row_2_2{
+                            margin-top: 13px;
+                            font-size: 15px;
+                            text-align: left;
+                        }
+                        .Row_2_3{
+                            display: flex;
+                            align-self: center;
+                            margin-top: 15px;
+                            margin-left: -20px;
+                            width: 100%;
+                            height: 40px;
+                            text-align: center;
+                            background: #f0c14b;
+                            border: 1.5px solid #846a29;
+                            color: #111;
+                            box-shadow: 1px 0 7px rgba(0,0,0,0.4);
+                        }
+                        .Row_2_4{
+                            margin-top: 15px;
+                            margin-bottom: 13px;
+                            text-align: left;
+                            font-size: 14px;
+                        }
+                        .Row_2_5{
+                            display: flex;
+                            margin-top: 12px;
+                            align-items: center;
+                            .Row_2_5_1{
+                                color: #0066c0;
+                                font-size: 14px;
+                            }
+                        }
                     }
                 }
             }
