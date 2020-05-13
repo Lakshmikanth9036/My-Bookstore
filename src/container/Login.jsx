@@ -46,13 +46,15 @@ class Login extends Component {
 
     signInHandler = () => {
 
-        this.setState({loader: true})
+        this.setState({ loader: true })
         setTimeout(() => {
-        if (this.state.type === 'User')
-            this.props.history.push('/bookstore/user')
-        else if (this.state.type === 'Admin')
-            this.props.history.push('/bookstore/admin')
-        },3000)
+            if (this.state.type === 'User')
+                this.props.history.push('/bookstore/user')
+            else if (this.state.type === 'Admin')
+                this.props.history.push('/bookstore/admin')
+            else if (this.state.type === 'Seller')
+                this.props.history.push('/bookstore/seller')
+        }, 3000)
     }
 
     isValidForm = (fields) => {

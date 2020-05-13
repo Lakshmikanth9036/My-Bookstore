@@ -9,9 +9,9 @@ const CssTextField = withStyles({
     '& label.Mui-focused': {
       color: '#0a0102',
     },
-    // '& .MuiInput-underline:after': {
-    //   borderBottomColor: 'green',
-    // },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: '#A03037',
+    },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
         borderColor: '#DCDCDC',

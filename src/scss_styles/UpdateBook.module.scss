@@ -1,0 +1,25 @@
+.BookInfo{
+    display: flex;
+    flex-direction: column;
+
+    .Book_Name_Div{
+        margin-bottom: 12px;
+    }
+    .Author_Name_Div{
+        margin-bottom: 12px;
+    }
+    .Book_Price_Div{
+        margin-bottom: 12px;
+    }
+    .No_of_Book_Div{
+        margin-bottom: 12px;
+    }
+    .Description{
+        margin-bottom: 8px;
+    }
+}
+
+.Done_Button{
+    margin-right: 12px;
+    margin-bottom: 12px;
+}

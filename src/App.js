@@ -8,6 +8,7 @@ import Login from './container/Login';
 import Registration from './container/Registration';
 import BookDetails from './container/BookDetails';
 import AdminDashboard from './container/AdminDashboard';
+import SellerDashboard from './container/SellerDashboard';
 
 class App extends Component {
 
@@ -17,6 +18,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/bookstore/user" component={Dashboard} />
           <Route exact path="/bookstore/admin" component={AdminDashboard} />
+          <Route exact path="/bookstore/seller" component={SellerDashboard} />
           <Route exact path="/bookstore/user/cart" component={Cart} />
           <Route exact path="/bookstore/user/oderplaced" component={OrderPlaced} />
           <Route exact path="/bookstore/user/bookdetails" component={BookDetails}/>
