@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import classes from '../scss_styles/Login.module.scss';
-import { Card, InputAdornment, IconButton, Link, Button, RadioGroup, FormControlLabel, Backdrop, Snackbar } from '@material-ui/core';
+import { Dialog, Slide, Link, Button, InputAdornment, IconButton } from '@material-ui/core';
+import classes from '../scss_styles/LoginInDashboard.module.scss';
 import TextField from '../elements/CssTextField';
 import EmailIcon from '@material-ui/icons/Email';
 import Visibility from '@material-ui/icons/Visibility';
-import bookstorelogo from '../assets/images/bookstore.png';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import StyledRadio from '../elements/StyledRadio';
-import Loader from '../UI/Loader';
 
-class Login extends Component {
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
+
+class LoginInDashboard extends Component {
 
     state = {
+        open: true,
         fields: {},
         errors: {},
         valid: {
@@ -20,10 +22,6 @@ class Login extends Component {
         },
         showPassword: false,
         isValid: false,
-        type: 'User',
-        loader: false,
-        open: false,
-        snackMessage: ''
     }
 
     changeHandler = (e) => {
@@ -41,31 +39,7 @@ class Login extends Component {
     }
 
     handleClose = () => {
-        this.setState(prevState => { return { open: !prevState.open } })
-    }
-
-    handleRadioChange = event => {
-        this.setState({
-            type: event.target.value
-        })
-    }
-
-    signInHandler = () => {
-
-        this.setState({ loader: true })
-        setTimeout(() => {
-            if (this.state.type === 'User') {
-                this.setState({ open: true, snackMessage: 'Successfully loged-in', loader: false })
-                setTimeout(() => {
-                    localStorage.setItem('UserToken', JSON.stringify('eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNTg4NzU5NDQ2fQ.BGJkdNKnsOCIW_61hM3eDhHuJPb7MYTDF0sWv0D-OzGKQPEFeeTwFGCSGPK6ebb00OGojFgDrIMwxbY8NqyRPA'))
-                    this.props.history.push('/bookstore/user')
-                }, 2000)
-            }
-            else if (this.state.type === 'Admin')
-                this.props.history.push('/bookstore/admin')
-            else if (this.state.type === 'Seller')
-                this.props.history.push('/bookstore/seller')
-        }, 3000)
+        this.setState({ open: false })
     }
 
     isValidForm = (fields) => {
@@ -115,12 +89,19 @@ class Login extends Component {
     }
 
     render() {
-        const { fields, errors, valid, showPassword, open, snackMessage } = this.state
+
+        const { fields, errors, valid, showPassword, open } = this.state
+
         return (
-            <div className={classes.LoginContainer}>
-                <Card className={classes.LoginCard} variant="outlined">
-                    <img className={classes.Logo} src={bookstorelogo} alt="book-store-logo" />
-                    <div className={classes.Signin}>Sign in</div>
+            <Dialog
+                open={open}
+                TransitionComponent={Transition}
+                keepMounted
+                onClose={this.handleClose}
+                aria-labelledby="alert-dialog-slide-title"
+                aria-describedby="alert-dialog-slide-description">
+                <div className={classes.LoginCard}>
+                    <div className={classes.Login}>Login</div>
                     <div className={classes.Form}>
                         <TextField
                             style={{ marginBottom: "7px" }}
@@ -172,39 +153,13 @@ class Login extends Component {
                         />
                         <Link className={classes.Forget} href='/forgotpassword'>Forgot password?</Link>
                         <div className={classes.Buttons}>
-                            <Button className={classes.SignupButton} href='/register'>Sign up</Button>
-                            <Button disabled={!this.state.isValid} className={classes.SigninButton} onClick={this.signInHandler} variant='contained'>Sign in</Button>
+                            <Button disabled={!this.state.isValid} className={classes.LoginButton} onClick={this.signInHandler} variant='contained'>Sign in</Button>
                         </div>
-                        <RadioGroup style={{
-                            display: "flex",
-                            width: "80%",
-                            marginBottom: "20px",
-                            alignSelf: "center",
-                            justifyContent: "space-between"
-                        }} row aria-label="position" name="position" value={this.state.type} onChange={this.handleRadioChange}>
-                            <FormControlLabel value="User" control={<StyledRadio />} label={<div style={{ fontSize: "13px", fontWeight: "500", color: "#333232" }}>User</div>} />
-                            <FormControlLabel value="Seller" control={<StyledRadio />} label={<div style={{ fontSize: "13px", fontWeight: "500", color: "#333232" }}>Seller</div>} />
-                            <FormControlLabel value="Admin" control={<StyledRadio />} label={<div style={{ fontSize: "13px", fontWeight: "500", color: "#333232" }}>Admin</div>} />
-                        </RadioGroup>
+                        </div>
                     </div>
-                </Card>
-                <Backdrop className={classes.ZIndex} open={this.state.loader}>
-                    <Loader />
-                </Backdrop>
-                <Snackbar
-                    anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'center',
-                    }}
-                    autoHideDuration={1500}
-                    key={new Date().getTime()}
-                    open={open}
-                    onClose={this.handleClose}
-                    message={snackMessage}
-                />
-            </div>
+            </Dialog>
         )
     }
 }
 
-export default Login
+export default LoginInDashboard

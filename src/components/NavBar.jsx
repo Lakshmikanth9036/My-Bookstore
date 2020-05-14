@@ -7,28 +7,32 @@ import cart from '../assets/images/supermarket@2x.png';
 import profile from '../assets/images/ichigo.jpg';
 import SearchIcon from '@material-ui/icons/Search';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import LoginInDashboard from './LoginInDashboard';
 
 class NavBar extends Component {
 
     state = {
-        menuOpen: false
+        anchorEl: null,
+        login: false
     }
 
-    menuOpenToggle = () => {
-        this.setState(
-            prevState => { return { menuOpen: !prevState.menuOpen } }
-        )
+    menuOpenToggle = e => {
+        this.setState({anchorEl: e.currentTarget})
     }
 
-    menuClose = e => {
-        if (this.anchorEl.contains(e.target)) {
-            return;
-        }
-        this.setState({ menuOpen: false })
+    menuClose = () => {
+        this.setState({ anchorEl: null })
     }
 
     goToCart = () => {
+        if(!JSON.parse(localStorage.getItem('UserToken'))){
+            this.setState(prevState => {
+                return { login: !prevState.login }
+            })
+        }
+        else{
         this.props.history.push('/bookstore/user/cart');
+        }
     }
 
     goToBookStore = () => {
@@ -44,14 +48,15 @@ class NavBar extends Component {
                             <img onClick={this.goToBookStore} className={classes.Logo} src={book} alt="book-logo" />
                             <div className={classes.BookStore}>bookstore</div>
                         </div>
-                        <div className={classes.Search}>
-                            <div className={classes.SearchIcon}>
-                                <SearchIcon fontSize="small" />
-                            </div>
-                            <InputBase
-                                placeholder="Search..."
-                                className={classes.Input} />
+
+                    </div>
+                    <div className={classes.Search}>
+                        <div className={classes.SearchIcon}>
+                            <SearchIcon fontSize="small" />
                         </div>
+                        <InputBase
+                            placeholder="Search..."
+                            className={classes.Input} />
                     </div>
 
                     <div className={classes.Cart}>
@@ -59,30 +64,24 @@ class NavBar extends Component {
                         <IconButton onClick={this.goToCart}>
                             <img className={classes.CartLogo} src={cart} alt="cart-logo" />
                         </IconButton>
-                        <IconButton>
+                        <IconButton
+                        aria-label="show more"
+                        aria-haspopup="true"
+                        onClick={this.menuOpenToggle}
+                        color="inherit">
                             <Avatar src={profile} />
                         </IconButton>
-                    </div>
-
-                    <div className={classes.Menu}>
-                        <IconButton
-                            aria-label="show more"
-                            buttonRef={node => { this.anchorEl = node }}
-                            aria-haspopup="true"
-                            onClick={this.menuOpenToggle}
-                            color="inherit">
-                            <MoreIcon style={{ color: "white" }} />
-                        </IconButton>
-                        <Popper open={this.state.menuOpen} anchorEl={this.anchorEl} role={undefined} transition disablePortal>
+                        <Popper open={Boolean(this.state.anchorEl)} anchorEl={this.state.anchorEl} role={undefined} transition disablePortal>
                             {({ TransitionProps, placement }) => (
                                 <Grow
                                     {...TransitionProps}
                                     style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>
                                     <Paper>
                                         <ClickAwayListener onClickAway={this.menuClose}>
-                                            <MenuList autoFocusItem={this.state.menuOpen} id="menu-list-grow">
+                                            <MenuList autoFocusItem={Boolean(this.state.anchorEl)} id="menu-list-grow">
                                                 <MenuItem>Profile</MenuItem>
-                                                <MenuItem onClick={this.goToCart}>My Cart</MenuItem>
+                                                <MenuItem>My Whishlist</MenuItem>
+                                                <MenuItem>Login</MenuItem>
                                                 <MenuItem>Logout</MenuItem>
                                             </MenuList>
                                         </ClickAwayListener>
@@ -92,7 +91,36 @@ class NavBar extends Component {
                         </Popper>
                     </div>
 
+                    <div className={classes.Menu}>
+                        <IconButton
+                            aria-label="show more"
+                            aria-haspopup="true"
+                            onClick={this.menuOpenToggle}
+                            color="inherit">
+                            <MoreIcon style={{ color: "white" }} />
+                        </IconButton>
+                        <Popper open={Boolean(this.state.anchorEl)} anchorEl={this.state.anchorEl} role={undefined} transition disablePortal>
+                            {({ TransitionProps, placement }) => (
+                                <Grow
+                                    {...TransitionProps}
+                                    style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>
+                                    <Paper>
+                                        <ClickAwayListener onClickAway={this.menuClose}>
+                                            <MenuList autoFocusItem={Boolean(this.state.anchorEl)} id="menu-list-grow">
+                                                <MenuItem>Profile</MenuItem>
+                                                <MenuItem onClick={this.goToCart}>My Cart</MenuItem>
+                                                <MenuItem>My Whishlist</MenuItem>
+                                                <MenuItem>Login</MenuItem>
+                                                <MenuItem>Logout</MenuItem>
+                                            </MenuList>
+                                        </ClickAwayListener>
+                                    </Paper>
+                                </Grow>
+                            )}
+                        </Popper>
+                    </div>
                 </header>
+                {this.state.login ? <LoginInDashboard /> : null}
             </Fragment>
         )
     }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import classes from '../scss_styles/Books.module.scss';
 import Book from './Book';
-import Pagination from '@material-ui/lab/Pagination';
+// import Pagination from '@material-ui/lab/Pagination';
+import Pagination from '../elements/CssPagination';
 
 class Books extends Component {
 
@@ -330,7 +331,7 @@ class Books extends Component {
                     }
                 </div>
                 <div className={classes.Pagination}>
-                <Pagination count={5} color="secondary" />
+                <Pagination count={5} color="primary"/>
                 </div>
             </div>
         )

@@ -1,9 +1,9 @@
 @media (min-width: 700px) {
-    .BookSearch {
-        width: 45%;
-    }
+    // .BookSearch {
+    //     // width: 45%;
+    // }
     .Search {
-        width: 490px;
+        width: 50%;
     }
     .Cart {
         display: flex;
@@ -16,13 +16,16 @@
 @media (max-width: 700px) {
     .BookSearch {
         margin-left: 4%;
-        width: 80%;
+        // width: 80%;
     }
     .Cart {
         display: none;
     }
     .Menu {
         display: flex;
+    }
+    .BookStore{
+        display: none;
     }
 }
 
@@ -36,11 +39,11 @@
     height: 60px;
     width: 100%;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     z-index: 90;
     .BookSearch {
         display: flex;
-        // width: 45%;
+        margin-left: 15px;
         justify-content: space-between;
         .BookLogoText {
             display: flex;
@@ -63,31 +66,32 @@
             }
         }
 
-        .Search {
-            display: flex;
-            height: 33px;
-            // width: 490px;
+       
+    }
+    .Search {
+        display: flex;
+        height: 33px;
+        // width: 490px;
+        align-items: center;
+        background-color: #ffffff;
+        border-radius: 3px;
+
+        .SearchIcon {
+            padding-left: 10px;
+            padding-right: 6px;
+            padding-top: 4px;
             align-items: center;
-            background-color: #ffffff;
-            border-radius: 3px;
+            justify-content: center;
+            color: #9d9d9d;
+        }
 
-            .SearchIcon {
-                padding-left: 10px;
-                padding-right: 6px;
-                padding-top: 4px;
-                align-items: center;
-                justify-content: center;
-                color: #9d9d9d;
-            }
-
-            .Input {
-                display: flex;
-                color: inherit;
-                padding: 8px 8px 8px 0;
-                font-size: 13px;
-                align-items: center;
-                width: 100%;
-            }
+        .Input {
+            display: flex;
+            color: inherit;
+            padding: 8px 8px 8px 0;
+            font-size: 13px;
+            align-items: center;
+            width: 100%;
         }
     }
     .Cart {

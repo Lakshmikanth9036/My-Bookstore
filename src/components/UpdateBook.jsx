@@ -62,14 +62,12 @@ class UpdateBook extends Component {
                         <div className={classes.Author_Name_Div}>
                             <TextField required name="authorName" onChange={this.changeHandler} id="authorName" fullWidth label="Author Name" value={book.authorName} />
                         </div>
-                        <div className={classes.Book_Price_Div}>
-                            <TextField required name="bookPrice" onChange={this.changeHandler} id="bookPrice" fullWidth label="Book Price" value={book.bookPrice} />
-                        </div>
-                        <div className={classes.No_of_Book_Div}>
-                            <TextField required name="noOfBooks" onChange={this.changeHandler} id="noOfBooks" fullWidth label="No. of books" value={book.noOfBooks} />
+                        <div className={classes.Book_Price_And_Count}>
+                            <TextField required style={{marginRight: "5px"}} size="small" name="bookPrice" variant="outlined" onChange={this.changeHandler} id="bookPrice" fullWidth label="Book Price" value={book.bookPrice} />
+                            <TextField required style={{marginLeft: "5px"}} size="small" name="noOfBooks" variant="outlined" onChange={this.changeHandler} id="noOfBooks" fullWidth label="No. of books" value={book.noOfBooks} />
                         </div>
                         <div className={classes.Description}>
-                            <TextField required name="description" onChange={this.changeHandler} id="description" multiline rows={3} fullWidth label="Description" value={book.description} />
+                            <TextField required name="description" variant="outlined" onChange={this.changeHandler} id="description" multiline rows={5} fullWidth label="Description" value={book.description} />
                         </div>
                     </div>
                 </DialogContent>

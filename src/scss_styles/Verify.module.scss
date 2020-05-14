@@ -1,0 +1,17 @@
+.VerifyUserCont{
+    display: flex;
+    width: 100wh;
+    height: 100vh;
+    background-image: url(../assets/images/verify.jpg);
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    .VerifyUserDiv{
+        display: flex;
+        .VerifyButton{
+            width: 150px;
+            background-color: rgb(22, 206, 9);
+            color: #0a0102;
+        }
+    }
+}
