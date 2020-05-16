@@ -184,9 +184,14 @@
             flex-direction: row-reverse;
             margin-right: 30px;
             margin-bottom: 28px;
+            color: #ffffff;
 
             .ContinueButton {
                 background-color: #3371b5;
+                color: #ffffff;
+                &:disabled {
+                    background-color: lighten($color: #3371b5, $amount: 30%);
+                }
             }
         }
     }

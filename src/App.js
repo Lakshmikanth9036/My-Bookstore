@@ -13,6 +13,7 @@ import ResetPassword from './container/ResetPassword';
 import ForgotPassword from './container/ForgotPassword';
 import Verify from './container/Verify';
 import asyncComponent from './hoc/asyncComponent';
+import Wishlist from './container/Wishlist';
 
 const PrivateRoute = asyncComponent(() => {
   return import('./auth/PriviteRoute');
@@ -33,6 +34,7 @@ class App extends Component {
           <Route exact path="/register" component={Registration} />
           <Route exact path="/bookstore/user" component={Dashboard} />
           <PrivateRoute exact path="/bookstore/user/cart" component={Cart} />
+          <Route exact path="/bookstore/user/wishlist" component={Wishlist} />
           <PrivateRoute exact path="/bookstore/user/oderplaced" component={OrderPlaced} />
           <Route exact path="/bookstore/user/bookdetails" component={BookDetails} />
           <Redirect from="*" to="/bookstore/user" />

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Dialog, Slide, Link, Button, InputAdornment, IconButton } from '@material-ui/core';
+import { Dialog, Slide, Link, Button, InputAdornment, IconButton, Backdrop } from '@material-ui/core';
 import classes from '../scss_styles/LoginInDashboard.module.scss';
 import TextField from '../elements/CssTextField';
 import EmailIcon from '@material-ui/icons/Email';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import Loader from '../UI/Loader';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -14,6 +15,7 @@ class LoginInDashboard extends Component {
 
     state = {
         open: true,
+        loader: false,
         fields: {},
         errors: {},
         valid: {
@@ -40,6 +42,18 @@ class LoginInDashboard extends Component {
 
     handleClose = () => {
         this.setState({ open: false })
+    }
+
+    loginHandler = () => {
+        this.setState({ loader: true })
+        setTimeout(() => {
+            this.setState({ loader: false })
+            setTimeout(() => {
+                localStorage.setItem('UserToken', JSON.stringify('eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNTg4NzU5NDQ2fQ.BGJkdNKnsOCIW_61hM3eDhHuJPb7MYTDF0sWv0D-OzGKQPEFeeTwFGCSGPK6ebb00OGojFgDrIMwxbY8NqyRPA'));
+                // this.props.history.push('/bookstore/user')
+                this.handleClose()
+            }, 2000)
+        }, 3000)
     }
 
     isValidForm = (fields) => {
@@ -97,6 +111,7 @@ class LoginInDashboard extends Component {
                 open={open}
                 TransitionComponent={Transition}
                 keepMounted
+                maxWidth='lg'
                 onClose={this.handleClose}
                 aria-labelledby="alert-dialog-slide-title"
                 aria-describedby="alert-dialog-slide-description">
@@ -153,10 +168,13 @@ class LoginInDashboard extends Component {
                         />
                         <Link className={classes.Forget} href='/forgotpassword'>Forgot password?</Link>
                         <div className={classes.Buttons}>
-                            <Button disabled={!this.state.isValid} className={classes.LoginButton} onClick={this.signInHandler} variant='contained'>Sign in</Button>
-                        </div>
+                            <Button disabled={!this.state.isValid} className={classes.LoginButton} onClick={this.loginHandler} variant='contained'>Login</Button>
                         </div>
                     </div>
+                    <Backdrop className={classes.ZIndex} open={this.state.loader}>
+                        <Loader />
+                    </Backdrop>
+                </div>
             </Dialog>
         )
     }

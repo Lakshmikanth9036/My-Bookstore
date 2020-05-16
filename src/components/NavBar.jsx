@@ -24,8 +24,12 @@ class NavBar extends Component {
         this.setState({ anchorEl: null })
     }
 
+    isUserLoggedIn = () => {
+        return JSON.parse(localStorage.getItem('UserToken'))
+    }
+
     goToCart = () => {
-        if(!JSON.parse(localStorage.getItem('UserToken'))){
+        if(!this.isUserLoggedIn()){
             this.setState(prevState => {
                 return { login: !prevState.login }
             })
@@ -33,6 +37,17 @@ class NavBar extends Component {
         else{
         this.props.history.push('/bookstore/user/cart');
         }
+    }
+
+    login = () => {
+        this.setState(prevState => {
+            return { login: !prevState.login }
+        })
+    }
+
+    logout = () => {
+        localStorage.removeItem('UserToken');
+        this.props.history.push('/bookstore/user');
     }
 
     goToBookStore = () => {
@@ -81,8 +96,7 @@ class NavBar extends Component {
                                             <MenuList autoFocusItem={Boolean(this.state.anchorEl)} id="menu-list-grow">
                                                 <MenuItem>Profile</MenuItem>
                                                 <MenuItem>My Whishlist</MenuItem>
-                                                <MenuItem>Login</MenuItem>
-                                                <MenuItem>Logout</MenuItem>
+                                               {!this.isUserLoggedIn() ? <MenuItem onClick={this.login}>Login</MenuItem> : <MenuItem onClick={this.logout}>Logout</MenuItem>}
                                             </MenuList>
                                         </ClickAwayListener>
                                     </Paper>
@@ -110,7 +124,7 @@ class NavBar extends Component {
                                                 <MenuItem>Profile</MenuItem>
                                                 <MenuItem onClick={this.goToCart}>My Cart</MenuItem>
                                                 <MenuItem>My Whishlist</MenuItem>
-                                                <MenuItem>Login</MenuItem>
+                                                <MenuItem onClick={this.login}>Login</MenuItem>
                                                 <MenuItem>Logout</MenuItem>
                                             </MenuList>
                                         </ClickAwayListener>

@@ -15,7 +15,45 @@ class CartDetails extends Component {
         placeOrder: false,
         continue: false,
         type: 'Home',
-        quantity: 1
+        quantity: 1,
+        address:{},
+        blank: false,
+    }
+
+    changeHandler = event => {
+        let address = {...this.state.address}
+        address[event.target.name] = event.target.value
+        let blank = this.isBlank(address);
+        this.setState({
+            address: address,
+            blank: blank
+        })
+    }
+
+    isBlank = (address) => {
+        let isBlank = true;
+        if(!address['name'] || typeof address['name'] === 'undefined'){
+            isBlank=false;
+        }
+        if(!address['phoneNo'] || typeof address['phoneNo'] === 'undefined'){
+            isBlank=false;
+        }
+        if(!address['pincode'] || typeof address['pincode'] === 'undefined'){
+            isBlank=false ;
+        }
+        if(address['locality'] === '' || typeof address['locality'] === 'undefined'){
+            isBlank=false;
+        }
+        if(!address['address'] || typeof address['address'] === 'undefined'){
+            isBlank=false;
+        }
+        if(!address['cityOrTown'] || typeof address['cityOrTown'] === 'undefined'){
+            isBlank=false;
+        }
+        if(!address['landmark'] || typeof address['landmark'] === 'undefined'){
+            isBlank=false;
+        }
+        return isBlank;
     }
 
     placeOrderHandler = () => {
@@ -53,7 +91,7 @@ class CartDetails extends Component {
     }
 
     render() {
-
+        const { address } = this.state
         return (
             
             <div className={classes.CartDetails}>
@@ -101,11 +139,17 @@ class CartDetails extends Component {
                                 required
                                 autoComplete="off"
                                 variant="outlined"
+                                name="name"
+                                onChange={this.changeHandler}
+                                value={address.name}
                                 label="Name" />
                             <CssTextField
                                 className={classes.Textfield}
                                 disabled={this.state.continue}
                                 required
+                                name="phoneNo"
+                                onChange={this.changeHandler}
+                                value={address.phoneNo}
                                 autoComplete="off"
                                 variant="outlined"
                                 label="Phone number" />
@@ -115,6 +159,9 @@ class CartDetails extends Component {
                                 className={classes.Textfield}
                                 disabled={this.state.continue}
                                 required
+                                name="pincode"
+                                onChange={this.changeHandler}
+                                value={address.pincode}
                                 autoComplete="off"
                                 variant="outlined"
                                 label="Pincode" />
@@ -122,6 +169,9 @@ class CartDetails extends Component {
                                 className={classes.Textfield}
                                 disabled={this.state.continue}
                                 required
+                                name="locality"
+                                onChange={this.changeHandler}
+                                value={address.locality}
                                 autoComplete="off"
                                 variant="outlined"
                                 label="Locality" />
@@ -137,6 +187,9 @@ class CartDetails extends Component {
                                 variant="outlined"
                                 multiline
                                 rows={3}
+                                value={address.address}
+                                onChange={this.changeHandler}
+                                name="address"
                                 label="Address" />
                         </div>
                         <div className={classes.Row_4}>
@@ -146,6 +199,9 @@ class CartDetails extends Component {
                                 required
                                 autoComplete="off"
                                 variant="outlined"
+                                name="cityOrTown"
+                                value={address.cityOrTown}
+                                onChange={this.changeHandler}
                                 label="City/Town" />
                             <CssTextField
                                 className={classes.Textfield}
@@ -153,6 +209,9 @@ class CartDetails extends Component {
                                 required
                                 autoComplete="off"
                                 variant="outlined"
+                                name="landmark"
+                                value={address.landmark}
+                                onChange={this.changeHandler}
                                 label="Landmark" />
                         </div>
                         <div className={classes.Type}>
@@ -173,7 +232,7 @@ class CartDetails extends Component {
                             </RadioGroup>
                         </div>
                         <div className={classes.Continue} style={!this.state.continue ? null : { display: "none" }}>
-                            <Button className={classes.ContinueButton} onClick={this.continueHandler} variant="contained" color="primary">Continue</Button>
+                            <Button disabled={!this.state.blank} className={classes.ContinueButton} onClick={this.continueHandler} variant="contained" color="primary">Continue</Button>
                         </div>
                     </div>
                 </Card>

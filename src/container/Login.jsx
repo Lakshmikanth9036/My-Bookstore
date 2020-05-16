@@ -51,7 +51,6 @@ class Login extends Component {
     }
 
     signInHandler = () => {
-
         this.setState({ loader: true })
         setTimeout(() => {
             if (this.state.type === 'User') {

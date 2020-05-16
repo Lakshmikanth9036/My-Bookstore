@@ -1,0 +1,173 @@
+@media (min-width: 700px) {
+    .WishlistContainer {
+        position: relative;
+        top: 83px;
+        left: 171px;
+    }
+}
+
+@media (max-width: 700px) {
+    .WishlistContainer {
+        position: relative;
+        top: 83px;
+        left: 18%;
+        margin-bottom: 80px;
+    }
+}
+
+.WishlistContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    flex-wrap: wrap;
+
+    .WishlistHeader {
+        display: flex;
+        margin-bottom: 21px;
+        justify-content: space-between;
+
+        .WishlistCount {
+            display: flex;
+            align-items: center;
+            .WishlistText {
+                font-size: 25px;
+                font-weight: 500;
+            }
+            .WishlistItemCount {
+                color: #9d9d9d;
+                font-size: 12px;
+                margin-top: 7px;
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .WishlistDetails {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .WishlistBooks {
+            display: flex;
+            flex-direction: column;
+            width: 235px;
+            height: 315px;
+            margin-right: 32px;
+            margin-bottom: 26px;
+
+            &:hover {
+                box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.2);
+            }
+
+            .Description {
+                display: flex;
+                border: 1px solid #9d9d9d;
+                color: #9d9d9d;
+                font-size: 11px;
+                width: 456px;
+                height: 318px;
+            }
+
+            .BookImageCont {
+                display: flex;
+                height: 171px;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                background-color: #f5f5f5;
+                .BookImage {
+                    height: 135px;
+                    width: 105px;
+                }
+            }
+
+            .BookDetails {
+                display: flex;
+                flex-direction: column;
+                margin-left: 25px;
+                margin-top: 18px;
+
+                .BookName {
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #0a0102;
+                }
+                .AuthorName {
+                    text-align: left;
+                    font-size: 10px;
+                    color: #9d9d9d;
+                    margin-top: 1px;
+                }
+                .BookPrice {
+                    text-align: left;
+                    font-size: 12px;
+                    color: #0a0102;
+                    margin-top: 10px;
+                    margin-bottom: 17px;
+                }
+            }
+
+            .Remove {
+                margin-left: 25px;
+                margin-right: 19px;
+                .RemoveButton {
+                    width: 191px;
+                    height: 29px;
+                    font-size: 11px;
+                    color: #0a0102;
+                }
+            }
+
+            .CartRemove {
+                display: flex;
+                margin-left: 22px;
+                margin-right: 22px;
+                justify-content: space-between;
+
+                .BagButton {
+                    background-color: #a03037;
+                    width: 93px;
+                    height: 29px;
+                    font-size: 9px;
+                }
+                .RemoveButton {
+                    width: 83px;
+                    height: 29;
+                    font-size: 11px;
+                    color: #0a0102;
+                }
+            }
+
+            .GoToBag {
+                margin-left: 25px;
+                margin-right: 19px;
+                .GoToBagButton {
+                    background-color: #3371b5;
+                    width: 191px;
+                    height: 29px;
+                    font-size: 10px;
+                }
+            }
+            .Outofstock {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                top: -63%;
+                left: 11%;
+                // transform: translate(-50px,-50px);
+                width: 178px;
+                height: 37px;
+                background: #ffffff;
+                box-shadow: 0px 3px 6px #00000029;
+                border-radius: 2px;
+                opacity: 0.96;
+                font-size: 15px;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+        }
+    }
+}
