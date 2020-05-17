@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
-import { IconButton, InputBase, Avatar, MenuItem, Popper, Grow, Paper, ClickAwayListener, MenuList } from '@material-ui/core';
+import { IconButton, InputBase, Avatar, MenuItem, Popper, Grow, Paper, ClickAwayListener, MenuList, Badge, withStyles } from '@material-ui/core';
 import classes from '../scss_styles/NavBar.module.scss';
 import book from '../assets/images/education@2x.png';
 import cart from '../assets/images/supermarket@2x.png';
@@ -8,6 +8,19 @@ import profile from '../assets/images/ichigo.jpg';
 import SearchIcon from '@material-ui/icons/Search';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import LoginInDashboard from './LoginInDashboard';
+
+const StyledBadge = withStyles((theme) => ({
+    badge: {
+        
+        borderRadius: '50%',
+        fontSize: '9px',
+        color: '#A03037',
+        right: -3,
+        border: `2px solid #A03037`,
+        padding: '0 4px',
+        backgroundColor: '#ffffff'
+    },
+}))(Badge);
 
 class NavBar extends Component {
 
@@ -17,7 +30,7 @@ class NavBar extends Component {
     }
 
     menuOpenToggle = e => {
-        this.setState({anchorEl: e.currentTarget})
+        this.setState({ anchorEl: e.currentTarget })
     }
 
     menuClose = () => {
@@ -29,13 +42,13 @@ class NavBar extends Component {
     }
 
     goToCart = () => {
-        if(!this.isUserLoggedIn()){
+        if (!this.isUserLoggedIn()) {
             this.setState(prevState => {
                 return { login: !prevState.login }
             })
         }
-        else{
-        this.props.history.push('/bookstore/user/cart');
+        else {
+            this.props.history.push('/bookstore/user/cart');
         }
     }
 
@@ -63,7 +76,6 @@ class NavBar extends Component {
                             <img onClick={this.goToBookStore} className={classes.Logo} src={book} alt="book-logo" />
                             <div className={classes.BookStore}>bookstore</div>
                         </div>
-
                     </div>
                     <div className={classes.Search}>
                         <div className={classes.SearchIcon}>
@@ -77,13 +89,15 @@ class NavBar extends Component {
                     <div className={classes.Cart}>
                         <div className={classes.CartName}>Cart</div>
                         <IconButton onClick={this.goToCart}>
-                            <img className={classes.CartLogo} src={cart} alt="cart-logo" />
+                            <StyledBadge badgeContent={0} showZero>
+                                <img className={classes.CartLogo} src={cart} alt="cart-logo" />
+                            </StyledBadge>
                         </IconButton>
                         <IconButton
-                        aria-label="show more"
-                        aria-haspopup="true"
-                        onClick={this.menuOpenToggle}
-                        color="inherit">
+                            aria-label="show more"
+                            aria-haspopup="true"
+                            onClick={this.menuOpenToggle}
+                            color="inherit">
                             <Avatar src={profile} />
                         </IconButton>
                         <Popper open={Boolean(this.state.anchorEl)} anchorEl={this.state.anchorEl} role={undefined} transition disablePortal>
@@ -96,7 +110,7 @@ class NavBar extends Component {
                                             <MenuList autoFocusItem={Boolean(this.state.anchorEl)} id="menu-list-grow">
                                                 <MenuItem>Profile</MenuItem>
                                                 <MenuItem>My Whishlist</MenuItem>
-                                               {!this.isUserLoggedIn() ? <MenuItem onClick={this.login}>Login</MenuItem> : <MenuItem onClick={this.logout}>Logout</MenuItem>}
+                                                {!this.isUserLoggedIn() ? <MenuItem onClick={this.login}>Login</MenuItem> : <MenuItem onClick={this.logout}>Logout</MenuItem>}
                                             </MenuList>
                                         </ClickAwayListener>
                                     </Paper>

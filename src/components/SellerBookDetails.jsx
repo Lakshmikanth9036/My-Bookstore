@@ -58,6 +58,7 @@ class BookDetails extends Component {
                         <div className={classes.Description}>{book.description}</div>
                         <div className={classes.Edit}>
                             <Button className={classes.Edit_Button} onClick={this.editBookHandler} variant="outlined" color="default" >Edit</Button>
+                            <Button className={classes.Remove_Button} variant="outlined">Remove</Button>
                         </div>
                     </div>
                 </div>

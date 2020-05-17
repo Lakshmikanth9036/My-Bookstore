@@ -13,7 +13,6 @@ class UpdateBook extends Component {
     state = {
         open: true,
         book: {}
-
     }
 
     componentDidMount() {
@@ -26,7 +25,7 @@ class UpdateBook extends Component {
         this.setState({ open: false })
     }
 
-    udateBookHandler = () => {
+    updateBookHandler = () => {
         console.log(this.state.book)
         this.handleClose();
     }
@@ -73,7 +72,7 @@ class UpdateBook extends Component {
                 </DialogContent>
                 <DialogActions>
                     <div className={classes.Done_Button}>
-                        <Button onClick={this.udateBookHandler} variant="contained">Done</Button>
+                        <Button onClick={this.updateBookHandler} variant="contained">Done</Button>
                     </div>
                 </DialogActions>
             </Dialog>

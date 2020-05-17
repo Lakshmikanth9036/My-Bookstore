@@ -1,0 +1,33 @@
+.AddBookDiv{
+    display: flex;
+    position: relative;
+    top: 100px;
+    width: 89%;
+    margin-bottom: 50px;
+    justify-self: center;
+    flex-direction: row-reverse;
+}
+
+.BookInfo{
+    display: flex;
+    flex-direction: column;
+
+    .Book_Name_Div{
+        margin-bottom: 12px;
+    }
+    .Author_Name_Div{
+        margin-bottom: 17px;
+    }
+    .Book_Price_And_Count{
+        display: flex;
+        margin-bottom: 12px;
+    }
+    .Description{
+        margin-bottom: 2px;
+    }
+}
+
+.Done_Button{
+    margin-right: 12px;
+    margin-bottom: 12px;
+}

@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     position: relative;
     width: 90%;
-    top: 100px;
+    top: 80px;
     left: 15%;
     margin-bottom: 50px;
     .BookDetailsCard {
@@ -72,13 +72,21 @@
                     display: flex;
                     flex-direction: row-reverse;
                     margin-right: 12px;
+                    margin-top: 10px;
                     .Edit_Button{
                         height: 35px;
                         // background-color: #1a73e8;
                         // color: #ffffff;
+                    }
+                    .Remove_Button{
+                        height: 35px;
+                        background-color: rgb(255, 34, 34);
+                        margin-right: 7px;
                     }
                 }
             }
         }
     }
 }
+
+
