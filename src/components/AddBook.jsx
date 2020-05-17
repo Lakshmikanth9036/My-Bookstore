@@ -25,6 +25,14 @@ export class AddBook extends Component {
 
     addBookHandler = () => {
         console.log(this.state.book)
+        let book = {
+            bookName: '',
+            authorName: '',
+            bookPrice: '',
+            noOfBooks: '',
+            description:''
+        }
+        this.setState({book: book})
         this.handleClose();
     }
 
