@@ -6,12 +6,12 @@ import { withRouter } from 'react-router-dom';
 
 const LightTooltip = withStyles((theme) => ({
     tooltip: {
-      backgroundColor: theme.palette.common.white,
-      color: '#9D9D9D',
-      boxShadow: theme.shadows[1],
-      fontSize: 11,
+        backgroundColor: theme.palette.common.white,
+        color: '#9D9D9D',
+        boxShadow: theme.shadows[1],
+        fontSize: 11,
     },
-  }))(Tooltip);
+}))(Tooltip);
 
 class Book extends Component {
 
@@ -34,11 +34,16 @@ class Book extends Component {
     }
 
     render() {
-       
+
         const { book } = this.props
         return (
 
-            <LightTooltip title={book.description} placement="right">
+            <LightTooltip title={
+                <div className={classes.BookDetails}>
+                    <div className={classes.BookDetail}>Book Detail</div>
+                    <div className={classes.BookDescription}>{book.description}</div>
+                </div>
+            } placement="right">
                 <Card className={classes.Book}>
                     <div className={classes.BookImageCont}>
                         <img className={classes.BookImage} onClick={() => this.handleBookDetails(book)} src={require(`../assets/images/${book.bookImage}`)} alt="book" />

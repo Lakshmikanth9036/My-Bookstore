@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import classes from '../scss_styles/CartDetails.module.scss';
-import { Card, IconButton, Button, 
-    FormControlLabel, RadioGroup 
+import {
+    Card, IconButton, Button,
+    FormControlLabel, RadioGroup, Select, MenuItem, InputLabel
 } from '@material-ui/core';
 import book from '../assets/images/Image1.png';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import StyledRadio from '../elements/StyledRadio';
 import CssTextField from '../elements/CssTextField';
+import FormControl from '../elements/CssFormControl';
 
 class CartDetails extends Component {
 
@@ -16,12 +18,12 @@ class CartDetails extends Component {
         continue: false,
         type: 'Home',
         quantity: 1,
-        address:{},
+        address: {},
         blank: false,
     }
 
     changeHandler = event => {
-        let address = {...this.state.address}
+        let address = { ...this.state.address }
         address[event.target.name] = event.target.value
         let blank = this.isBlank(address);
         this.setState({
@@ -32,26 +34,26 @@ class CartDetails extends Component {
 
     isBlank = (address) => {
         let isBlank = true;
-        if(!address['name'] || typeof address['name'] === 'undefined'){
-            isBlank=false;
+        if (!address['name'] || typeof address['name'] === 'undefined') {
+            isBlank = false;
         }
-        if(!address['phoneNo'] || typeof address['phoneNo'] === 'undefined'){
-            isBlank=false;
+        if (!address['phoneNo'] || typeof address['phoneNo'] === 'undefined') {
+            isBlank = false;
         }
-        if(!address['pincode'] || typeof address['pincode'] === 'undefined'){
-            isBlank=false ;
+        if (!address['pincode'] || typeof address['pincode'] === 'undefined') {
+            isBlank = false;
         }
-        if(address['locality'] === '' || typeof address['locality'] === 'undefined'){
-            isBlank=false;
+        if (address['locality'] === '' || typeof address['locality'] === 'undefined') {
+            isBlank = false;
         }
-        if(!address['address'] || typeof address['address'] === 'undefined'){
-            isBlank=false;
+        if (!address['address'] || typeof address['address'] === 'undefined') {
+            isBlank = false;
         }
-        if(!address['cityOrTown'] || typeof address['cityOrTown'] === 'undefined'){
-            isBlank=false;
+        if (!address['cityOrTown'] || typeof address['cityOrTown'] === 'undefined') {
+            isBlank = false;
         }
-        if(!address['landmark'] || typeof address['landmark'] === 'undefined'){
-            isBlank=false;
+        if (!address['landmark'] || typeof address['landmark'] === 'undefined') {
+            isBlank = false;
         }
         return isBlank;
     }
@@ -93,7 +95,7 @@ class CartDetails extends Component {
     render() {
         const { address } = this.state
         return (
-            
+
             <div className={classes.CartDetails}>
                 <Card className={classes.CartItem} variant="outlined">
                     <div className={classes.No_of_cart_items}>My cart(2)</div>
@@ -108,7 +110,13 @@ class CartDetails extends Component {
                                 <IconButton className={classes.Minus} disabled={this.state.quantity <= 1 || this.state.placeOrder} onClick={this.removeBookHandler} size="small">
                                     <RemoveIcon fontSize="small" />
                                 </IconButton>
-                                <div className={classes.Quantity}>{this.state.quantity}</div>
+                                {/* <div className={classes.Quantity}>{this.state.quantity}</div> */}
+                                <input
+                                    value={this.state.quantity}
+                                // placeholder="Title"
+                                // onChange={this.handlerChange}
+                                // name="title"
+                                />
                                 <IconButton className={classes.Pluse} disabled={this.state.placeOrder} size="small" onClick={this.addBookHandler}>
                                     <AddIcon fontSize="small" />
                                 </IconButton>
@@ -125,11 +133,11 @@ class CartDetails extends Component {
                         <Button className={classes.PlaceOrderButton} onClick={this.placeOrderHandler} variant="contained" color="primary">Place order</Button>
                     </div>
                 </Card>
-                
+
                 <Card className={classes.CustomerDetails} variant="outlined">
                     <div className={classes.DetailsHeader}>
                         <div className={classes.Text}>Customer Details</div>
-                        {this.state.continue ? <div className={classes.Edit} onClick={this.continueHandler}>Edit</div> : null }
+                        {this.state.continue ? <div className={classes.Edit} onClick={this.continueHandler}>Edit</div> : null}
                     </div>
                     <div className={classes.Details} style={this.state.placeOrder ? { display: "flex" } : { display: "none" }}>
                         <div className={classes.Row_1}>
@@ -165,7 +173,7 @@ class CartDetails extends Component {
                                 autoComplete="off"
                                 variant="outlined"
                                 label="Pincode" />
-                            <CssTextField
+                            {/* <CssTextField
                                 className={classes.Textfield}
                                 disabled={this.state.continue}
                                 required
@@ -174,7 +182,25 @@ class CartDetails extends Component {
                                 value={address.locality}
                                 autoComplete="off"
                                 variant="outlined"
-                                label="Locality" />
+                                label="Locality" /> */}
+                            <FormControl variant="outlined" className={classes.Textfield} required>
+                                <InputLabel id="demo-simple-select-outlined-label">Country</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-outlined-label"
+                                    id="demo-simple-select-outlined"
+                                    name="locality"
+                                    value={address.locality}
+                                    onChange={this.changeHandler}
+                                    label="Country"
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={"India"}>India</MenuItem>
+                                    <MenuItem value={"USA"}>USA</MenuItem>
+                                    <MenuItem value={"Russia"}>Russia</MenuItem>
+                                </Select>
+                            </FormControl>
                         </div>
                         <div className={classes.Row_3}>
                             <CssTextField

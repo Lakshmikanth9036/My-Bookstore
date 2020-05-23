@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
-import { IconButton, InputBase, Avatar, MenuItem, Popper, Grow, Paper, ClickAwayListener, MenuList, Badge, withStyles } from '@material-ui/core';
+import { IconButton, InputBase, Avatar, MenuItem, Badge, withStyles, Menu, Divider } from '@material-ui/core';
 import classes from '../scss_styles/NavBar.module.scss';
 import book from '../assets/images/education@2x.png';
 import cart from '../assets/images/supermarket@2x.png';
@@ -8,10 +8,13 @@ import profile from '../assets/images/ichigo.jpg';
 import SearchIcon from '@material-ui/icons/Search';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import LoginInDashboard from './LoginInDashboard';
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ShopIcon from "@material-ui/icons/Shop";
 
 const StyledBadge = withStyles((theme) => ({
     badge: {
-        
+
         borderRadius: '50%',
         fontSize: '9px',
         color: '#A03037',
@@ -89,7 +92,7 @@ class NavBar extends Component {
                     <div className={classes.Cart}>
                         <div className={classes.CartName}>Cart</div>
                         <IconButton onClick={this.goToCart}>
-                            <StyledBadge badgeContent={0} showZero>
+                            <StyledBadge badgeContent={22} showZero>
                                 <img className={classes.CartLogo} src={cart} alt="cart-logo" />
                             </StyledBadge>
                         </IconButton>
@@ -100,56 +103,155 @@ class NavBar extends Component {
                             color="inherit">
                             <Avatar src={profile} />
                         </IconButton>
-                        <Popper open={Boolean(this.state.anchorEl)} anchorEl={this.state.anchorEl} role={undefined} transition disablePortal>
-                            {({ TransitionProps, placement }) => (
-                                <Grow
-                                    {...TransitionProps}
-                                    style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>
-                                    <Paper>
-                                        <ClickAwayListener onClickAway={this.menuClose}>
-                                            <MenuList autoFocusItem={Boolean(this.state.anchorEl)} id="menu-list-grow">
-                                                <MenuItem>Profile</MenuItem>
-                                                <MenuItem>My Whishlist</MenuItem>
-                                                {!this.isUserLoggedIn() ? <MenuItem onClick={this.login}>Login</MenuItem> : <MenuItem onClick={this.logout}>Logout</MenuItem>}
-                                            </MenuList>
-                                        </ClickAwayListener>
-                                    </Paper>
-                                </Grow>
-                            )}
-                        </Popper>
+                        <Menu
+                            id={classes.SimpleMenu}
+                            anchorEl={this.state.anchorEl}
+                            anchorOrigin={{
+                                vertical: "bottom",
+                                horizontal: "center",
+                            }}
+                            transformOrigin={{
+                                vertical: "top",
+                                horizontal: "center",
+                            }}
+                            keepMounted
+                            open={Boolean(this.state.anchorEl)}
+                            onClose={this.menuClose}>
+                            <MenuItem>
+                                <div className={classes.ProfileImgDiv}>
+                                    <img
+                                        src={profile}
+                                        alt="avatar"
+                                        style={{
+                                            height: "2cm",
+                                            width: "2cm",
+                                            borderRadius: "50%",
+                                            border: "2px solid grey",
+                                        }}
+                                    />
+                                </div>
+                            </MenuItem>
+                            <MenuItem>
+                                <div className={classes.Profilemenu}>
+                                    <div className={classes.ProfilemenuNewcustomer}>
+                                        New Customer?
+                                         </div>
+                                    <a href="/register" className={classes.ProfilemenuSignup}>
+                                        Sign Up
+                                        </a>
+                                </div>
+                            </MenuItem>
+                            <MenuItem>
+                                <div className={classes.AccountMenu}>
+                                    <div className={classes.AccountIcon}>
+                                        <AccountCircleIcon />
+                                    </div>
+                                    <div className={classes.ProfileHeading}>Profile</div>
+                                </div>
+                            </MenuItem>
+                            <MenuItem>
+                                <div className={classes.WishlistMenu}>
+                                    <div className={classes.WishlistIcon}>
+                                        <FavoriteIcon />
+                                    </div>
+                                    <div className={classes.WishlistHeading}>Wishlist</div>
+                                </div>
+                            </MenuItem>
+                            <MenuItem>
+                                <div className={classes.OrderMenu}>
+                                    <div className={classes.ShoppingIcon}>
+                                        <ShopIcon />
+                                    </div>
+                                    <div className={classes.OrdersHeading}>Orders</div>
+                                </div>
+                            </MenuItem>
+                            <Divider/>
+                            <MenuItem>
+                                <div className={classes.SignoutMenu}>
+                                    <div className={classes.Signout}>Sign Out</div>
+                                </div>
+                            </MenuItem>
+                         
+                        {/* {!this.isUserLoggedIn() ? <MenuItem onClick={this.login}>Login</MenuItem> : <MenuItem onClick={this.logout}>Logout</MenuItem>} */}
+                        </Menu>
                     </div>
 
-                    <div className={classes.Menu}>
-                        <IconButton
-                            aria-label="show more"
-                            aria-haspopup="true"
-                            onClick={this.menuOpenToggle}
-                            color="inherit">
-                            <MoreIcon style={{ color: "white" }} />
-                        </IconButton>
-                        <Popper open={Boolean(this.state.anchorEl)} anchorEl={this.state.anchorEl} role={undefined} transition disablePortal>
-                            {({ TransitionProps, placement }) => (
-                                <Grow
-                                    {...TransitionProps}
-                                    style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}>
-                                    <Paper>
-                                        <ClickAwayListener onClickAway={this.menuClose}>
-                                            <MenuList autoFocusItem={Boolean(this.state.anchorEl)} id="menu-list-grow">
-                                                <MenuItem>Profile</MenuItem>
-                                                <MenuItem onClick={this.goToCart}>My Cart</MenuItem>
-                                                <MenuItem>My Whishlist</MenuItem>
-                                                <MenuItem onClick={this.login}>Login</MenuItem>
-                                                <MenuItem>Logout</MenuItem>
-                                            </MenuList>
-                                        </ClickAwayListener>
-                                    </Paper>
-                                </Grow>
-                            )}
-                        </Popper>
-                    </div>
-                </header>
-                {this.state.login ? <LoginInDashboard /> : null}
-            </Fragment>
+                <div className={classes.Menu}>
+                    <IconButton
+                        aria-label="show more"
+                        aria-haspopup="true"
+                        onClick={this.menuOpenToggle}
+                        color="inherit">
+                        <MoreIcon style={{ color: "white" }} />
+                    </IconButton>
+                    {/* <Menu
+                            id={classes.SimpleMenu}
+                            anchorEl={this.state.anchorEl}
+                            anchorOrigin={{
+                                vertical: "bottom",
+                                horizontal: "center",
+                            }}
+                            transformOrigin={{
+                                vertical: "top",
+                                horizontal: "center",
+                            }}
+                            keepMounted
+                            open={Boolean(this.state.anchorEl)}
+                            onClose={this.menuClose}>
+                            <MenuItem>
+                                <div className={classes.ProfileDiv}>
+                                    <img
+                                        src={profile}
+                                        alt="avatar"
+                                        style={{
+                                            height: "2cm",
+                                            width: "2cm",
+                                            borderRadius: "50%",
+                                            border: "2px solid grey",
+                                        }}
+                                    />
+                                </div>
+                            </MenuItem>
+                            <MenuItem>
+                                <div className={classes.Profilemenu}>
+                                    <div className={classes.ProfilemenuNewcustomer}>
+                                        New Customer?
+                                         </div>
+                                    <a href="/register" className={classes.ProfilemenuSignup}>
+                                        Sign Up
+                                        </a>
+                                </div>
+                            </MenuItem>
+                            <MenuItem>
+                                <div className={classes.AccountMenu}>
+                                    <div className={classes.AccountIcon}>
+                                        <AccountCircleIcon />
+                                    </div>
+                                    <div className={classes.ProfileHeading}>Profile</div>
+                                </div>
+                            </MenuItem>
+                            <MenuItem>
+                                <div className={classes.WishlistMenu}>
+                                    <div className={classes.WishlistIcon}>
+                                        <FavoriteIcon />
+                                    </div>
+                                    <div className={classes.WishlistHeading}>Wishlist</div>
+                                </div>
+                            </MenuItem>
+                            <MenuItem>
+                                <div className={classes.OrderMenu}>
+                                    <div className={classes.ShoppingIcon}>
+                                        <ShopIcon />
+                                    </div>
+                                    <div className={classes.OrdersHeading}>Orders</div>
+                                </div>
+                            </MenuItem>
+                        {!this.isUserLoggedIn() ? <MenuItem onClick={this.login}>Login</MenuItem> : <MenuItem onClick={this.logout}>Logout</MenuItem>}
+                        </Menu> */}
+                </div>
+                </header >
+                { this.state.login ? <LoginInDashboard /> : null }
+            </Fragment >
         )
     }
 }

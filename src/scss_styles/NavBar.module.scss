@@ -24,7 +24,7 @@
     .Menu {
         display: flex;
     }
-    .BookStore{
+    .BookStore {
         display: none;
     }
 }
@@ -65,8 +65,6 @@
                 padding: 5px 10px;
             }
         }
-
-       
     }
     .Search {
         display: flex;
@@ -109,5 +107,83 @@
             width: 20px;
             height: 21px;
         }
+    }
+}
+
+#SimpleMenu {
+    top: 42px;
+    left: -61px;
+
+    .ProfileImgDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Profilemenu {
+        display: flex;
+        width: 100%;
+        .ProfilemenuNewcustomer {
+            color: black;
+            font-weight: bold;
+            padding-right: 42px;
+        }
+        .ProfilemenuSignup {
+            font-weight: bold;
+            color: #a03037;
+            text-decoration: none;
+        }
+    }
+    .AccountMenu{
+        display: flex;
+        width: 100%;
+
+        .ProfileHeading {
+            color: black;
+          }
+          
+          .AccountIcon {
+            color: #8f2b2f;
+            opacity: 1;
+            padding-right: 13px;
+          }
+    }
+    .WishlistMenu{
+        display: flex;
+        width: 100%;
+
+        .WishlistHeading {
+            color: black;
+          }
+          
+          .WishlistIcon {
+            color: #8f2b2f;
+            opacity: 1;
+            padding-right: 13px;
+          }
+    }
+    .OrderMenu{
+        display: flex;
+        width: 100%;
+
+        .OrdersHeading {
+            color: black;
+          }
+          
+          .ShoppingIcon {
+            color: #8f2b2f;
+            opacity: 1;
+            padding-right: 13px;
+          }
+    }
+    .SignoutMenu{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        .Signout{
+            color: #8f2b2f;
+            font-weight: bold;
+          }
     }
 }

@@ -2,7 +2,7 @@
     .BooksContainer {
         position: relative;
         top: 83px;
-        left: 171px;
+        left: 250px;
     }
 }
 
@@ -72,7 +72,7 @@
 
         .SelectWrapper {
             position: relative;
-            margin-right: 8%;
+            margin-right: 18%;
         }
 
         // .SelectWrapper::after {
@@ -221,5 +221,15 @@
         display: flex;
         width: 100%;
         justify-content: center;
+    }
+}
+
+.BookDetails{
+    display: flex;
+    flex-direction: column;
+    .BookDetail{
+        font-size: 14px;
+        font-weight: bold;
+        color: #0a0102;
     }
 }
