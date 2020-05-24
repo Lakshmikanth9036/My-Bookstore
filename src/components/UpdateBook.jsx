@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import classes from '../scss_styles/UpdateBook.module.scss';
-import { Slide, DialogTitle, DialogContent, DialogActions, Button } from '@material-ui/core';
+import { Slide, DialogContent, DialogActions, Button } from '@material-ui/core';
 import TextField from '../elements/CssTextField';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -52,8 +52,10 @@ class UpdateBook extends Component {
                 aria-labelledby="alert-dialog-slide-title"
                 aria-describedby="alert-dialog-slide-description"
             >
-                <DialogTitle>{"Edit Book"}</DialogTitle>
-                <DialogContent style={{ width: "320px" }}>
+                <div className={classes.EditTitleDiv}>
+                    <div className={classes.EditTitle}>Update Book Details</div>
+                </div>
+                <DialogContent>
                     <div className={classes.BookInfo}>
                         <div className={classes.Book_Name_Div}>
                             <TextField required name="bookName" onChange={this.changeHandler} id="bookName" fullWidth label="Book Name" value={book.bookName} />

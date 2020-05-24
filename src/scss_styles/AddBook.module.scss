@@ -1,8 +1,26 @@
+@media (min-width: 600px) {
+    .AddBookDiv{
+        width: 84%;
+    }
+    .AddBookTitle{
+        padding-top: 5%;
+    }
+}
+
+@media (max-width: 700px) {
+    .AddBookDiv{
+        width: 95%;
+    }
+    .AddBookTitle{
+        padding-top: 7%;
+    }
+}
+
+
 .AddBookDiv{
     display: flex;
     position: relative;
     top: 100px;
-    width: 84%;
     margin-bottom: 50px;
     justify-self: center;
     flex-direction: row-reverse;
@@ -11,6 +29,7 @@
 .BookInfo{
     display: flex;
     flex-direction: column;
+    margin-top: 12px;
 
     .Book_Name_Div{
         margin-bottom: 12px;
@@ -30,4 +49,15 @@
 .Done_Button{
     margin-right: 12px;
     margin-bottom: 12px;
+}
+
+.AddBookHeader{
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    background-color: #a03037;
+    color: #ffffff;
+    .AddBookTitle{
+        font-size: 25px;
+    }
 }

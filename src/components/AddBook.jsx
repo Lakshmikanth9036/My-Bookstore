@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import classes from '../scss_styles/AddBook.module.scss';
-import { Fab, Tooltip, Slide, Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@material-ui/core';
+import { Fab, Tooltip, Slide, Dialog, DialogContent, DialogActions, Button } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import TextField from '../elements/CssTextField';
 
@@ -30,9 +30,9 @@ export class AddBook extends Component {
             authorName: '',
             bookPrice: '',
             noOfBooks: '',
-            description:''
+            description: ''
         }
-        this.setState({book: book})
+        this.setState({ book: book })
         this.handleClose();
     }
 
@@ -66,8 +66,10 @@ export class AddBook extends Component {
                     aria-labelledby="alert-dialog-slide-title"
                     aria-describedby="alert-dialog-slide-description"
                 >
-                    <DialogTitle style={{textAlign:'center'}}>Add Book</DialogTitle>
-                    <DialogContent style={{ width: "320px" }}>
+                    <div className={classes.AddBookHeader}>
+                        <div className={classes.AddBookTitle}>Add Book</div>
+                    </div>
+                    <DialogContent>
                         <div className={classes.BookInfo}>
                             <div className={classes.Book_Name_Div}>
                                 <TextField required name="bookName" variant="outlined" onChange={this.changeHandler} id="bookName" fullWidth label="Book Name" value={book.bookName} />

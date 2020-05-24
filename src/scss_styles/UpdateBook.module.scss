@@ -1,16 +1,29 @@
+@media (min-width: 600px) {
+    .EditTitle{
+        padding-top: 5%;
+    }
+}
+
+@media (max-width: 700px) {
+    .EditTitle{
+        padding-top: 7%;
+    }
+}
+
 .BookInfo{
     display: flex;
     flex-direction: column;
+    margin-top: 12px;
 
     .Book_Name_Div{
-        margin-bottom: 12px;
+        margin-bottom: 15px;
     }
     .Author_Name_Div{
         margin-bottom: 17px;
     }
     .Book_Price_And_Count{
         display: flex;
-        margin-bottom: 12px;
+        margin-bottom: 15px;
     }
     .Description{
         margin-bottom: 2px;
@@ -20,4 +33,15 @@
 .Done_Button{
     margin-right: 12px;
     margin-bottom: 12px;
+}
+
+.EditTitleDiv{
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    background-color: #a03037;
+    color: #ffffff;
+    .EditTitle{
+        font-size: 25px;
+    }
 }
