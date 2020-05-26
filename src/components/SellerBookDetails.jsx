@@ -54,15 +54,16 @@ class BookDetails extends Component {
                         <div className={classes.Author_Name}><strong>Author Name: </strong>{book.authorName}</div>
                         <div className={classes.Book_Price}><strong>Book Price: </strong>{book.bookPrice}</div>
                         <div className={classes.No_of_books}><strong>No of books: </strong>{book.noOfBooks}</div>
+                        <div className={classes.ApprovelStatus}><strong>Approval Status: </strong>Hold</div>
                         <div className={classes.DescriptionText}><strong>Description:</strong></div>
                         <div className={classes.Description}>{book.description}</div>
                         <div className={classes.Edit}>
-                            <Button className={classes.Edit_Button} onClick={this.editBookHandler} variant="outlined" color="default" >Edit</Button>
                             <Button className={classes.Remove_Button} variant="outlined">Remove</Button>
+                            <Button className={classes.Edit_Button} onClick={this.editBookHandler} variant="outlined" color="default" >Edit</Button>
                         </div>
                     </div>
                 </div>
-                {this.state.editBook ? <UpdateBook book={book} /> : null}
+                {this.state.editBook ? <UpdateBook book={book} editBookHandler={this.editBookHandler}/> : null}
             </Card>
         )
     }

@@ -3,6 +3,7 @@ import classes from '../scss_styles/AddBook.module.scss';
 import { Fab, Tooltip, Slide, Dialog, DialogContent, DialogActions, Button } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import TextField from '../elements/CssTextField';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -12,7 +13,15 @@ export class AddBook extends Component {
 
     state = {
         open: false,
-        book: {}
+        book: {},
+        fileName: 'No File Choosen'
+    }
+
+    fileSelectHandler = e => {
+        const formData = new FormData();
+        formData.append('file', e.target.files[0])
+        this.setState({ fileName: e.target.files[0].name })
+        console.log(e.target.files[0].name)
     }
 
     handleOpen = () => {
@@ -86,10 +95,22 @@ export class AddBook extends Component {
                             </div>
                         </div>
                     </DialogContent>
-                    <DialogActions>
-                        <div className={classes.Done_Button}>
-                            <Button onClick={this.addBookHandler} variant="contained">Done</Button>
+                    <div className={classes.Done_Button}>
+                        <div className={classes.UploadBookImage}>
+                            <input onChange={this.fileSelectHandler} style={{ display: "none" }} id="upload-book-image" type="file" />
+                            <label htmlFor="upload-book-image">
+                                <Button
+                                    variant="contained"
+                                    color="default"
+                                    component="span"
+                                    startIcon={<CloudUploadIcon />}
+                                >Upload</Button>
+                            </label>
+                            <div className={classes.FileName}>{this.state.fileName}</div>
                         </div>
+                    </div>
+                    <DialogActions>
+                    <Button onClick={this.addBookHandler} style={{marginRight: "15px", marginBottom:"15px"}} variant="contained">Done</Button>
                     </DialogActions>
                 </Dialog>
             </Fragment>

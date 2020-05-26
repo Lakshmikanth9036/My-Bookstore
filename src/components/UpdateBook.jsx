@@ -22,7 +22,8 @@ class UpdateBook extends Component {
     }
 
     handleClose = () => {
-        this.setState({ open: false })
+        this.props.editBookHandler();
+        this.setState({ open: false });
     }
 
     updateBookHandler = () => {

@@ -67,23 +67,27 @@
                 margin-left: 10px;
                 flex-wrap: wrap;
                 .Book_Name{
-                    font-size: 25px;
-                    text-align: left;
-                    margin-bottom: 7px;
-                    font-weight: bold;
-                }
-                .Author_Name{
-                    font-size: 18px;
-                    text-align: left;
-                    margin-bottom: 7px;
-                }
-                .Book_Price{
                     font-size: 20px;
                     text-align: left;
                     margin-bottom: 7px;
                     font-weight: bold;
                 }
+                .Author_Name{
+                    font-size: 15px;
+                    text-align: left;
+                    margin-bottom: 7px;
+                }
+                .Book_Price{
+                    font-size: 15px;
+                    text-align: left;
+                    margin-bottom: 7px;
+                }
                 .No_of_books{
+                    font-size: 15px;
+                    text-align: left;
+                    margin-bottom: 7px;
+                }
+                .ApprovelStatus{
                     font-size: 15px;
                     text-align: left;
                     margin-bottom: 7px;
@@ -109,11 +113,11 @@
                         height: 35px;
                         // background-color: #1a73e8;
                         // color: #ffffff;
+                        margin-right: 7px;
                     }
                     .Remove_Button{
                         height: 35px;
                         background-color: rgb(255, 34, 34);
-                        margin-right: 7px;
                     }
                 }
             }
