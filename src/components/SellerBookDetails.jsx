@@ -50,15 +50,14 @@ class BookDetails extends Component {
                         }
                     </div>
                     <div className={classes.BookDetail}>
-                        <div className={classes.Book_Name}><strong>Book Name: </strong>{book.bookName}</div>
+                    <div className={classes.Book_Name}><strong>Book Name: </strong>{book.bookName}</div>
                         <div className={classes.Author_Name}><strong>Author Name: </strong>{book.authorName}</div>
                         <div className={classes.Book_Price}><strong>Book Price: </strong>{book.bookPrice}</div>
-                        <div className={classes.No_of_books}><strong>No of books: </strong>{book.noOfBooks}</div>
-                        <div className={classes.ApprovelStatus}><strong>Approval Status: </strong>Hold</div>
+                        <div className={classes.No_of_books} style={book.noOfBooks <= 5 ? { color: "#d50000" } : null}><strong>No of books: </strong>{book.noOfBooks}</div>
+                        <div className={classes.ApprovelStatus}><strong style={{ marginRight: "5px" }}>Approval Status: </strong><div style={book.approveStatus === 'Approved' ? { color: "#4caf50" } : book.approveStatus === 'Hold' ? { color: "#ff9800" } : { color: "#d50000" }}>{book.approveStatus}</div></div>
                         <div className={classes.DescriptionText}><strong>Description:</strong></div>
                         <div className={classes.Description}>{book.description}</div>
                         <div className={classes.Edit}>
-                            <Button className={classes.Remove_Button} variant="outlined">Remove</Button>
                             <Button className={classes.Edit_Button} onClick={this.editBookHandler} variant="outlined" color="default" >Edit</Button>
                         </div>
                     </div>

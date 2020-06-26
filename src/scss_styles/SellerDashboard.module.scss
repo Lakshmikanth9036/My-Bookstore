@@ -1,7 +1,7 @@
 @media (min-width: 600px) {
     .SellerDashboard {
         left: 16%;
-        width: 90%;
+        width: 80%;
     }
     .BookDetailsCard {
         width: 65%;
@@ -54,7 +54,7 @@
                 .Book_Image {
                     width: 130px;
                     height: 170px;
-                    &:hover {
+                    &:hover{
                         box-shadow: 1px 0px 15px #0a0102;
                     }
                 }
@@ -67,33 +67,34 @@
                 margin-left: 10px;
                 flex-wrap: wrap;
                 .Book_Name{
-                    font-size: 20px;
+                    font-size: 25px;
                     text-align: left;
                     margin-bottom: 7px;
                     font-weight: bold;
                 }
                 .Author_Name{
-                    font-size: 15px;
+                    font-size: 18px;
                     text-align: left;
                     margin-bottom: 7px;
                 }
                 .Book_Price{
-                    font-size: 15px;
+                    font-size: 18px;
                     text-align: left;
                     margin-bottom: 7px;
                 }
                 .No_of_books{
-                    font-size: 15px;
+                    font-size: 18px;
                     text-align: left;
                     margin-bottom: 7px;
                 }
                 .ApprovelStatus{
-                    font-size: 15px;
+                    display: flex;
+                    font-size: 18px;
                     text-align: left;
                     margin-bottom: 7px;
                 }
                 .DescriptionText{
-                    font-size: 18px;
+                    font-size: 20px;
                     text-align: left;
                     margin-bottom: 7px;
                 }
@@ -107,17 +108,13 @@
                     display: flex;
                     flex-direction: row-reverse;
                     margin-right: 12px;
-                    margin-top: 10px;
-                    margin-bottom: 12px;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
                     .Edit_Button{
                         height: 35px;
-                        // background-color: #1a73e8;
-                        // color: #ffffff;
-                        margin-right: 7px;
-                    }
-                    .Remove_Button{
-                        height: 35px;
-                        background-color: rgb(255, 34, 34);
+                        width: 80px;
+                        background-color: #a03037;
+                        color: #ffffff;
                     }
                 }
             }
