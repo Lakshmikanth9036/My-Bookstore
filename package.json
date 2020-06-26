@@ -1,13 +1,6 @@
 {
   "name": "book-store",
-  "version": "0.1.0",
-  "private": true,
-  "engines": {
-    "node": "12.16.1",
-    "npm": "6.14.5"
-  },
   "homepage": "https://Lakshmikanth9036.github.io/My-Bookstore",
-
   "dependencies": {
     "@babel/core": "7.9.0",
     "@material-ui/core": "^4.9.12",
@@ -40,7 +33,6 @@
     "eslint-plugin-react-hooks": "^1.6.1",
     "file-loader": "4.3.0",
     "fs-extra": "^8.1.0",
-    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "4.0.0-beta.11",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
@@ -150,5 +142,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
