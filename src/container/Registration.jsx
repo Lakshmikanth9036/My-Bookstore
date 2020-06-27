@@ -14,7 +14,12 @@ import Loader from '../UI/Loader';
 class Registration extends Component {
 
     state = {
-        fields: {},
+        fields: {
+            name: '',
+            emailAddress: '',
+            mobile: '',
+            password: ''
+        },
         errors: {},
         valid: {
             name: false,
@@ -208,7 +213,6 @@ class Registration extends Component {
                                 endAdornment: (
                                     <InputAdornment position="end">
                                         <IconButton
-                                            color="black"
                                             aria-label="toggle password visibility"
                                             onClick={this.handleClickShowPassword}
                                             edge="end">

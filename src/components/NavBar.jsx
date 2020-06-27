@@ -10,7 +10,8 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import LoginInDashboard from './LoginInDashboard';
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShopIcon from "@material-ui/icons/Shop";
+// import ShopIcon from "@material-ui/icons/Shop";
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const StyledBadge = withStyles((theme) => ({
     badge: {
@@ -70,6 +71,10 @@ class NavBar extends Component {
         this.props.history.push('/bookstore/user');
     }
 
+    goToWishlist = () => {
+        this.props.history.push('/bookstore/user/wishlist');
+    }
+
     render() {
         return (
             <Fragment>
@@ -106,6 +111,7 @@ class NavBar extends Component {
                         <Menu
                             id={classes.SimpleMenu}
                             anchorEl={this.state.anchorEl}
+                            getContentAnchorEl={null}
                             anchorOrigin={{
                                 vertical: "bottom",
                                 horizontal: "center",
@@ -149,7 +155,7 @@ class NavBar extends Component {
                                     <div className={classes.ProfileHeading}>Profile</div>
                                 </div>
                             </MenuItem>
-                            <MenuItem>
+                            <MenuItem onClick={this.goToWishlist}>
                                 <div className={classes.WishlistMenu}>
                                     <div className={classes.WishlistIcon}>
                                         <FavoriteIcon />
@@ -157,12 +163,12 @@ class NavBar extends Component {
                                     <div className={classes.WishlistHeading}>Wishlist</div>
                                 </div>
                             </MenuItem>
-                            <MenuItem>
+                            <MenuItem onClick={this.goToCart}>
                                 <div className={classes.OrderMenu}>
                                     <div className={classes.ShoppingIcon}>
-                                        <ShopIcon />
+                                        <ShoppingCartIcon />
                                     </div>
-                                    <div className={classes.OrdersHeading}>Orders</div>
+                                    <div className={classes.OrdersHeading}>Cart</div>
                                 </div>
                             </MenuItem>
                             <Divider/>

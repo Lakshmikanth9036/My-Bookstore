@@ -76,7 +76,7 @@ class Details extends Component {
                     <div className={classes.Customer_Reviews}>Customer Reviews</div>
                     {
                         book.rating_review.map(rr =>
-                            <div className={classes.Customer_Rating_Review}>
+                            <div key={rr.ratingId} className={classes.Customer_Rating_Review}>
                                 <div className={classes.Customer}>
                                     <Avatar src={profile} />
                                     <div className={classes.Customer_Name}>Lorem ipsum</div>

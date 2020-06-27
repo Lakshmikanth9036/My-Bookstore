@@ -18,7 +18,16 @@ class CartDetails extends Component {
         continue: false,
         type: 'Home',
         quantity: 1,
-        address: {},
+        address: {
+            landmark: "",
+            city: "",
+            locality: "",
+            address: "",
+            addressType: "",
+            pinCode: "",
+            name: "",
+            phonenumber: "",
+        },
         blank: false,
     }
 
@@ -110,13 +119,13 @@ class CartDetails extends Component {
                                 <IconButton className={classes.Minus} disabled={this.state.quantity <= 1 || this.state.placeOrder} onClick={this.removeBookHandler} size="small">
                                     <RemoveIcon fontSize="small" />
                                 </IconButton>
-                                {/* <div className={classes.Quantity}>{this.state.quantity}</div> */}
-                                <input
+                                <div className={classes.Quantity}>{this.state.quantity}</div>
+                                {/* <input
                                     value={this.state.quantity}
-                                // placeholder="Title"
-                                // onChange={this.handlerChange}
-                                // name="title"
-                                />
+                                placeholder="Title"
+                                onChange={this.handlerChange}
+                                name="title"
+                                /> */}
                                 <IconButton className={classes.Pluse} disabled={this.state.placeOrder} size="small" onClick={this.addBookHandler}>
                                     <AddIcon fontSize="small" />
                                 </IconButton>
@@ -203,20 +212,19 @@ class CartDetails extends Component {
                             </FormControl>
                         </div>
                         <div className={classes.Row_3}>
-                            <CssTextField
-                                style={{
-                                    width: "512px"
-                                }}
-                                disabled={this.state.continue}
-                                required
-                                autoComplete='off'
-                                variant="outlined"
-                                multiline
-                                rows={3}
-                                value={address.address}
-                                onChange={this.changeHandler}
-                                name="address"
-                                label="Address" />
+                        <CssTextField
+                                    className={classes.Address}
+                                    disabled={this.state.continue}
+                                    required
+                                    autoComplete="off"
+                                    variant="outlined"
+                                    multiline
+                                    rows={3}
+                                    value={address.address}
+                                    onChange={this.changeHandler}
+                                    name="address"
+                                    label="Address"
+                                />
                         </div>
                         <div className={classes.Row_4}>
                             <CssTextField

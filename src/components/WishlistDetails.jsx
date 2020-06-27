@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from '../scss_styles/Wishlist.module.scss';
 import { Card, Button } from '@material-ui/core';
+import { withRouter } from 'react-router-dom';
 
 class WishlistDetails extends Component {
     state = {
@@ -16,7 +17,6 @@ class WishlistDetails extends Component {
     }
 
     handleBookDetails = (book) => {
-        console.log(book)
         const params = { book : book}
         this.props.history.push('/bookstore/user/bookdetails',params)
     }
@@ -60,4 +60,4 @@ class WishlistDetails extends Component {
     }
 }
 
-export default WishlistDetails
+export default withRouter(WishlistDetails);
