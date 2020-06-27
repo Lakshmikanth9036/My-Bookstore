@@ -31,12 +31,16 @@ class Details extends Component {
                                     <div className={classes.Paperback}>Paperback</div>
                                     <div className={classes.Price}>Rs. {book.bookPrice}</div>
                                 </div>
-                                <div className={classes.Description}>
+                                <div className={classes.DescriptionDesk}>
                                     <div className={classes.Title}>Description:</div>
                                     <div className={classes.Text}>{book.description}</div>
                                 </div>
                             </div>
                         </div>
+                        <div className={classes.DescriptionMob}>
+                                    <div className={classes.Title}>Description:</div>
+                                    <div className={classes.Text}>{book.description}</div>
+                                </div>
                         <div className={classes.BuyNow}>
                             <div className={classes.BuyNowCont}>
                                 <div className={classes.Row_1}>
