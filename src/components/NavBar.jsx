@@ -12,6 +12,7 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 // import ShopIcon from "@material-ui/icons/Shop";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import StoreIcon from '@material-ui/icons/Store';
 
 const StyledBadge = withStyles((theme) => ({
     badge: {
@@ -54,6 +55,14 @@ class NavBar extends Component {
         else {
             this.props.history.push('/bookstore/user/cart');
         }
+    }
+
+    goToAdminDashboard = () => {
+        this.props.history.push('/bookstore/admin');
+    }
+
+    goToSellerDashboard = () => {
+        this.props.history.push('/bookstore/seller');
     }
 
     login = () => {
@@ -147,12 +156,20 @@ class NavBar extends Component {
                                         </a>
                                 </div>
                             </MenuItem>
-                            <MenuItem>
+                            <MenuItem onClick={this.goToAdminDashboard}> 
                                 <div className={classes.AccountMenu}>
                                     <div className={classes.AccountIcon}>
                                         <AccountCircleIcon />
                                     </div>
-                                    <div className={classes.ProfileHeading}>Profile</div>
+                                    <div className={classes.ProfileHeading}>Admin</div>
+                                </div>
+                            </MenuItem>
+                            <MenuItem onClick={this.goToSellerDashboard}>
+                                <div className={classes.AccountMenu}>
+                                    <div className={classes.AccountIcon}>
+                                        <StoreIcon />
+                                    </div>
+                                    <div className={classes.ProfileHeading}>Seller</div>
                                 </div>
                             </MenuItem>
                             <MenuItem onClick={this.goToWishlist}>
